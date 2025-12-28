@@ -1,0 +1,604 @@
+[
+  {
+    "id": "pomegranate-technique",
+    "title": "The Pomegranate Technique",
+    "subtitle": "Breaking complexity without overwhelm",
+    "opening": "Big problems rarely defeat us through difficulty. They defeat us through density. When too many concerns are pressed together, the mind tightens. Clarity begins the moment you are willing to open the fruit.",
+    "essence": "What overwhelms you is rarely one problem - it is many unnamed ones.",
+    "visual_image": "pomegranate.jpg",
+    "visual_caption": "A complex problem becomes manageable once its parts are separated.",
+    "explanation": "The mind struggles with complexity, not effort. When multiple concerns are emotionally tangled together, the brain treats them as a single threat. The Pomegranate Technique works because it removes emotional fusion. By separating a problem into independent parts, you lower its psychological weight.",
+    "steps": [
+      {
+        "title": "Name the Fruit",
+        "description": "State the problem plainly without solving it."
+      },
+      {
+        "title": "Separate the Seeds",
+        "description": "Break the problem into independent parts."
+      },
+      {
+        "title": "Examine One Seed at a Time",
+        "description": "Ask what you truly think about each part."
+      },
+      {
+        "title": "Reassemble Consciously",
+        "description": "Only after examining parts do you decide how to act."
+      }
+    ],
+    "example": "A career decision feels paralyzing when treated as one question. But once opened, you may realize: You enjoy the work but not the hours. The pay is acceptable but growth feels limited. What once felt like one heavy decision becomes several smaller, solvable ones.",
+    "when_to_apply": [
+      "A problem feels emotionally heavy",
+      "You feel stuck despite thinking often",
+      "Multiple concerns feel tangled",
+      "Decisions feel urgent but unclear"
+    ],
+    "when_not_to_apply": [
+      "A decision is truly time-critical",
+      "You already have clarity but avoid action",
+      "The problem is simple but emotionally uncomfortable"
+    ],
+    "practice": "Take one overwhelming problem. Do not solve it. Write down its seeds. Stop there.",
+    "category": [
+      "thinking",
+      "decision-making"
+    ],
+    "tags": [
+      "complexity",
+      "overwhelm"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "two-minute-rule",
+    "title": "The Two-Minute Rule",
+    "subtitle": "Small actions, immediate momentum",
+    "opening": "Productivity advice often focuses on grand systems. But most paralysis comes from tasks so small we dismiss them. The two-minute rule removes this friction.",
+    "essence": "If it takes less than two minutes, do it now. Small completions create momentum.",
+    "visual_image": "two-minute.jpg",
+    "visual_caption": "Tiny actions completed immediately prevent mental clutter.",
+    "explanation": "Our brains treat incomplete tasks as open loops. Every email you will respond to later occupies mental bandwidth. The Two-Minute Rule: if something takes less than two minutes, handle it immediately. This prevents the slow accumulation of small frictions.",
+    "steps": [
+      {
+        "title": "Identify Two-Minute Tasks",
+        "description": "Notice when something can be handled quickly."
+      },
+      {
+        "title": "Do It Immediately",
+        "description": "Complete it right away instead of listing it."
+      },
+      {
+        "title": "Close the Loop",
+        "description": "Finish completely. Half-done tasks still create load."
+      },
+      {
+        "title": "Return to Main Work",
+        "description": "Clear the small thing, then refocus."
+      }
+    ],
+    "example": "You notice an email needing a quick yes or no. Instead of flagging it, you take 30 seconds to reply. That evening, your inbox has 12 fewer items. Your mental load feels lighter.",
+    "when_to_apply": [
+      "Small tasks are piling up",
+      "You procrastinate on tiny actions",
+      "You want momentum without derailment",
+      "Decision fatigue is building"
+    ],
+    "when_not_to_apply": [
+      "You're in deep focus",
+      "The task is poorly defined",
+      "Saying yes creates more problems",
+      "You avoid harder work"
+    ],
+    "practice": "For one day, handle every task under two minutes immediately.",
+    "category": [
+      "productivity",
+      "habits"
+    ],
+    "tags": [
+      "efficiency",
+      "momentum"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "eisenhower-matrix",
+    "title": "The Eisenhower Matrix",
+    "subtitle": "Urgent is not the same as important",
+    "opening": "We confuse motion with progress. The inbox demands attention. But urgency is not importance.",
+    "essence": "Not everything urgent matters. Not everything important feels urgent.",
+    "visual_image": "eisenhower.jpg",
+    "visual_caption": "Four quadrants that separate what demands attention from what deserves it.",
+    "explanation": "The Eisenhower Matrix divides tasks into four quadrants: Urgent and Important (do now), Important but Not Urgent (schedule), Urgent but Not Important (delegate), Neither (eliminate). Most people live in quadrants 1 and 3. True productivity lives in quadrant 2.",
+    "steps": [
+      {
+        "title": "List Everything",
+        "description": "Write down all tasks and commitments."
+      },
+      {
+        "title": "Classify Each Item",
+        "description": "Place tasks into the four quadrants."
+      },
+      {
+        "title": "Act Accordingly",
+        "description": "Do Q1 immediately. Schedule Q2. Delegate Q3. Delete Q4."
+      },
+      {
+        "title": "Protect Quadrant 2",
+        "description": "Block time for important non-urgent work."
+      }
+    ],
+    "example": "Sarah uses the matrix and discovers: Q1 has one crisis, Q2 has neglected strategic work, Q3 has 15 requests others could handle, Q4 has three pointless committees. She delegates Q3, drops Q4, blocks mornings for Q2. Within weeks, she is less busy but more effective.",
+    "when_to_apply": [
+      "You feel busy but unproductive",
+      "Urgent tasks interrupt important work",
+      "You want to be strategic not reactive"
+    ],
+    "when_not_to_apply": [
+      "You're in an actual emergency",
+      "Your role requires constant reactive work"
+    ],
+    "practice": "List 10 things you did this week. Classify them. How much time in Q2?",
+    "category": [
+      "productivity",
+      "time-management"
+    ],
+    "tags": [
+      "prioritization",
+      "focus"
+    ],
+    "likes": 0,
+    "views": 1
+  },
+  {
+    "id": "parkinsons-law",
+    "title": "Parkinson's Law",
+    "subtitle": "Work expands to fill the time available",
+    "opening": "Give yourself a week to write a report, it takes a week. Give yourself three hours, it still gets done. This is about how deadlines shape work.",
+    "essence": "Work expands to fill the time you allocate. Tighter deadlines create focus.",
+    "visual_image": "parkinsons.jpg",
+    "visual_caption": "A task occupies exactly as much time as you give it.",
+    "explanation": "Parkinson's Law states: Work expands to fill available time. Artificial abundance of time doesn't improve quality. It creates waste and overthinking. The solution: impose realistic constraints. When time is scarce, you focus on what matters.",
+    "steps": [
+      {
+        "title": "Estimate Realistically",
+        "description": "Ask: how long if I had to finish today?"
+      },
+      {
+        "title": "Set a Tighter Deadline",
+        "description": "Cut your estimate by 30-50%."
+      },
+      {
+        "title": "Work to the Constraint",
+        "description": "Use pressure to focus on essentials."
+      },
+      {
+        "title": "Review and Adjust",
+        "description": "Learn your actual versus perceived capacity."
+      }
+    ],
+    "example": "James has two weeks for a proposal. By day 8, he has rewritten the intro five times. Next time, he gives himself 4 hours over 2 days. The proposal is tighter and completed with time to spare.",
+    "when_to_apply": [
+      "Tasks take longer than they should",
+      "You overthink simple things",
+      "Flexible deadlines drift endlessly"
+    ],
+    "when_not_to_apply": [
+      "Work requires deep complexity",
+      "You're consistently rushing and making errors"
+    ],
+    "practice": "Pick one task. Give yourself half the time you think it needs.",
+    "category": [
+      "productivity",
+      "time-management"
+    ],
+    "tags": [
+      "efficiency",
+      "deadlines"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "timeboxing",
+    "title": "Timeboxing",
+    "subtitle": "Fixed time, flexible scope",
+    "opening": "Most people plan by task. They work until it's done. But done is rarely clear. Timeboxing reverses this: you control the time.",
+    "essence": "Assign fixed time blocks to tasks. When time ends, work ends or continues in the next box.",
+    "visual_image": "timeboxing.jpg",
+    "visual_caption": "Your calendar becomes a series of containers.",
+    "explanation": "Timeboxing allocates fixed time to an activity, then stops when time is up. This creates urgency, prevents perfectionism, and makes progress visible. It's about giving every task exactly the attention it deserves.",
+    "steps": [
+      {
+        "title": "List Your Tasks",
+        "description": "Identify what needs to get done."
+      },
+      {
+        "title": "Assign Time Blocks",
+        "description": "Give each task a specific time allocation."
+      },
+      {
+        "title": "Protect the Boundaries",
+        "description": "When time is up, stop and move on."
+      },
+      {
+        "title": "Schedule Overflow",
+        "description": "If incomplete, schedule another box later."
+      }
+    ],
+    "example": "Maria schedules: 9-10am draft outline, 11am-12pm create slides, 2-2:30pm review. At 10am, her outline isn't perfect but done enough. By 2:30pm, the presentation is complete.",
+    "when_to_apply": [
+      "Your day feels shapeless",
+      "Tasks expand endlessly",
+      "You struggle with context-switching"
+    ],
+    "when_not_to_apply": [
+      "Work requires deep flow states",
+      "You're in an unpredictable environment"
+    ],
+    "practice": "Tomorrow, timebox your entire day. Allocate 30-90 minute blocks.",
+    "category": [
+      "time-management",
+      "productivity"
+    ],
+    "tags": [
+      "focus",
+      "planning"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "batch-processing",
+    "title": "Batch Processing",
+    "subtitle": "Group similar tasks to eliminate switching costs",
+    "opening": "Every time you switch tasks, your brain stumbles. Email, then a call, then email again. Each shift costs focus. Batch processing eliminates these taxes.",
+    "essence": "Group similar tasks together. Complete them in one focused session.",
+    "visual_image": "batching.jpg",
+    "visual_caption": "Concentrate energy into focused blocks instead of scattering it.",
+    "explanation": "Context-switching reduces productivity by up to 40%. Batch processing groups similar tasks into dedicated time blocks. Instead of checking email 20 times, you check twice. The result: deeper focus, less fatigue.",
+    "steps": [
+      {
+        "title": "Identify Recurring Task Types",
+        "description": "List types of work you do regularly."
+      },
+      {
+        "title": "Group Similar Tasks",
+        "description": "Collect same-type tasks and schedule together."
+      },
+      {
+        "title": "Set Boundaries",
+        "description": "Resist handling tasks outside batch time."
+      },
+      {
+        "title": "Optimize Each Batch",
+        "description": "Develop systems to make batches more efficient."
+      }
+    ],
+    "example": "David batches email into 10-10:30am and 3-3:30pm. He closes his inbox the rest of the day. Within a week, his focus improves dramatically.",
+    "when_to_apply": [
+      "You're constantly switching types",
+      "Interruptions destroy focus",
+      "Small similar tasks accumulate"
+    ],
+    "when_not_to_apply": [
+      "Your role requires real-time responsiveness",
+      "Tasks are time-sensitive"
+    ],
+    "practice": "Choose one task type. Batch it into two sessions tomorrow.",
+    "category": [
+      "time-management",
+      "productivity"
+    ],
+    "tags": [
+      "focus",
+      "efficiency"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "reciprocity-principle",
+    "title": "The Reciprocity Principle",
+    "subtitle": "People feel compelled to return favors",
+    "opening": "A stranger holds the door. You feel obligated to thank them. A colleague helps. You want to return the favor. This is a psychological force.",
+    "essence": "When you give first, people feel a natural obligation to give back.",
+    "visual_image": "reciprocity.jpg",
+    "visual_caption": "The invisible debt created by kindness and its powerful pull.",
+    "explanation": "Reciprocity is one of the strongest forces in behavior. When someone does something for us, we feel uncomfortable until we return the favor. Giving creates an almost involuntary urge to give back. But misuse it and it backfires. Authentic generosity works.",
+    "steps": [
+      {
+        "title": "Give Without Expectation",
+        "description": "Offer genuine help first, not as transaction."
+      },
+      {
+        "title": "Make It Personal",
+        "description": "Tailor what you give to what they need."
+      },
+      {
+        "title": "Don't Keep Score",
+        "description": "Reciprocity works best when not calculated."
+      },
+      {
+        "title": "Allow Them to Return",
+        "description": "When someone wants to reciprocate, let them."
+      }
+    ],
+    "example": "Marcus wants a mentor relationship. He shares valuable articles, makes introductions, offers feedback. Three weeks later, the mentor reaches out for coffee. Marcus gave first. Reciprocity did the rest.",
+    "when_to_apply": [
+      "Building new relationships",
+      "Creating goodwill before asking",
+      "Strengthening partnerships"
+    ],
+    "when_not_to_apply": [
+      "You're giving to manipulate",
+      "You're keeping score",
+      "It creates unhealthy power dynamics"
+    ],
+    "practice": "This week, help three people without asking for anything in return.",
+    "category": [
+      "influence",
+      "relationships"
+    ],
+    "tags": [
+      "persuasion",
+      "trust"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "social-proof",
+    "title": "Social Proof",
+    "subtitle": "We look to others to decide what's right",
+    "opening": "The restaurant is full, so you wait in line. The book has 10,000 reviews, so you buy it. We call this following trends. Psychologists call it social proof.",
+    "essence": "People look to others' actions to determine their own. What's popular becomes more popular.",
+    "visual_image": "social-proof.jpg",
+    "visual_caption": "The crowd doesn't just follow, it creates its own gravity.",
+    "explanation": "Social proof is when people assume others' actions reflect correct behavior. When uncertain, we look around and copy. This drives bestsellers, testimonials, crowded restaurants. Understanding social proof means understanding why perception becomes reality.",
+    "steps": [
+      {
+        "title": "Show Popularity",
+        "description": "Highlight how many people use or trust you."
+      },
+      {
+        "title": "Use Testimonials",
+        "description": "Real stories create more trust than claims."
+      },
+      {
+        "title": "Leverage Authority",
+        "description": "Expert endorsements multiply credibility."
+      },
+      {
+        "title": "Create Visible Momentum",
+        "description": "Make success visible and specific."
+      }
+    ],
+    "example": "Two coffee shops next door. One empty, one has a line. Most people choose the busy one. The owner of the empty shop seeds a line with friends. Real customers see it, join. Within days, the line is real. Social proof created itself.",
+    "when_to_apply": [
+      "Launching something new",
+      "Persuading uncertain people",
+      "Building credibility"
+    ],
+    "when_not_to_apply": [
+      "The crowd is objectively wrong",
+      "You're fabricating proof",
+      "Following conflicts with values"
+    ],
+    "practice": "Notice social proof today. Where did you choose because others did?",
+    "category": [
+      "influence",
+      "persuasion"
+    ],
+    "tags": [
+      "psychology",
+      "decision-making"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "active-listening",
+    "title": "Active Listening",
+    "subtitle": "Hear what's unsaid, not just what's spoken",
+    "opening": "Most people don't listen. They wait for their turn to talk. They hear words but miss meaning. Active listening is about being present.",
+    "essence": "Listen to understand, not to reply. People feel heard before they feel helped.",
+    "visual_image": "listening.jpg",
+    "visual_caption": "True listening creates space for others to be fully understood.",
+    "explanation": "Active listening is fully concentrating on what someone is saying before formulating a response. Most conversations are dueling monologues. Active listening means focusing completely, withholding judgment, reflecting back, and noticing emotions beneath words.",
+    "steps": [
+      {
+        "title": "Be Fully Present",
+        "description": "Put away devices. Make eye contact. Be engaged."
+      },
+      {
+        "title": "Listen Without Interrupting",
+        "description": "Let the person finish completely."
+      },
+      {
+        "title": "Reflect and Clarify",
+        "description": "Paraphrase what you heard. Ask questions."
+      },
+      {
+        "title": "Respond to Emotion",
+        "description": "Notice and acknowledge feelings."
+      }
+    ],
+    "example": "Sarah says: I'm tired of last-minute requests. Tom responds: It sounds like unpredictability is draining. Is it about lead time or volume? Sarah feels understood. She opens up more. Tom learns the real issue: she feels undervalued.",
+    "when_to_apply": [
+      "Someone shares something difficult",
+      "Understanding complex problems",
+      "Conflicts escalate",
+      "Building deeper trust"
+    ],
+    "when_not_to_apply": [
+      "Conversation is purely transactional",
+      "You're exhausted",
+      "Speaker is manipulative"
+    ],
+    "practice": "In your next conversation, don't think about your response while they talk. Just listen.",
+    "category": [
+      "communication",
+      "relationships"
+    ],
+    "tags": [
+      "empathy",
+      "connection"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "nonviolent-communication",
+    "title": "Nonviolent Communication",
+    "subtitle": "Speak without blame, listen without defense",
+    "opening": "You never listen. You always do this. These sentences start conversations. They also end them. Nonviolent Communication offers a different way.",
+    "essence": "Express needs and feelings without blame. Listen without taking offense.",
+    "visual_image": "nvc.jpg",
+    "visual_caption": "A framework for speaking truth without triggering defensiveness.",
+    "explanation": "Nonviolent Communication is a framework for expressing yourself honestly while fostering connection. The structure: Observation (state facts), Feeling (express emotion), Need (identify underlying need), Request (make clear ask). NVC removes blame and focuses on needs.",
+    "steps": [
+      {
+        "title": "Observe Without Judgment",
+        "description": "State what happened factually."
+      },
+      {
+        "title": "Name Your Feeling",
+        "description": "Use I feel statements. Own your emotions."
+      },
+      {
+        "title": "Identify Your Need",
+        "description": "What universal need isn't being met?"
+      },
+      {
+        "title": "Make a Request",
+        "description": "Ask for specific behavior change."
+      }
+    ],
+    "example": "Maya's partner cancels plans last-minute. NVC approach: When plans change last-minute, I feel disappointed because I value our time and need consistency. Would you let me know sooner if something comes up? Her partner doesn't feel attacked. He commits to texting earlier.",
+    "when_to_apply": [
+      "Conversations escalate into arguments",
+      "Delivering difficult feedback",
+      "Someone shuts down",
+      "Resolving conflict"
+    ],
+    "when_not_to_apply": [
+      "You're in immediate danger",
+      "Other person won't engage respectfully",
+      "Using it to manipulate"
+    ],
+    "practice": "Think of one recent conflict. Rewrite what you said using NVC: Observation, Feeling, Need, Request.",
+    "category": [
+      "communication",
+      "relationships"
+    ],
+    "tags": [
+      "conflict-resolution",
+      "empathy"
+    ],
+    "likes": 0,
+    "views": 0
+  },
+  {
+    "id": "habit-stacking",
+    "title": "Habit Stacking",
+    "subtitle": "Build new habits on top of existing ones",
+    "opening": "You want to meditate daily. But when? You want to read more. But where does it fit? New habits fail from lack of triggers. Habit stacking solves this.",
+    "essence": "Link new habits to existing routines. After current habit, I will new habit.",
+    "visual_image": "habit-stack.jpg",
+    "visual_caption": "New behaviors anchor to existing patterns, making them automatic.",
+    "explanation": "Habit stacking leverages an insight: you already have dozens of automatic daily habits. Instead of trying to remember a new habit, link it to an existing one. After I pour coffee, I will meditate for 2 minutes. The existing habit becomes a trigger.",
+    "steps": [
+      {
+        "title": "Identify a Current Habit",
+        "description": "Choose something you do daily without thinking."
+      },
+      {
+        "title": "Choose a New Habit",
+        "description": "Pick something small and specific."
+      },
+      {
+        "title": "Create the Stack",
+        "description": "After I current habit, I will new habit."
+      },
+      {
+        "title": "Start Tiny",
+        "description": "Make it impossible to fail. 2 minutes, not 20."
+      }
+    ],
+    "example": "Lisa wants to stretch more. She tries: After I finish morning coffee, I will do a 3-minute stretch. Day 1: She makes coffee, remembers, stretches. Week 2: The stretch feels incomplete without coffee. It's automatic. Six months later, she has stretched 180+ times.",
+    "when_to_apply": [
+      "You struggle to remember new habits",
+      "You want consistency without motivation",
+      "You have strong existing routines"
+    ],
+    "when_not_to_apply": [
+      "Your existing habits are unstable",
+      "The new habit requires different context",
+      "Stacking too many at once"
+    ],
+    "practice": "Pick one current habit you do daily. Stack one tiny new habit onto it for 7 days.",
+    "category": [
+      "habits",
+      "productivity"
+    ],
+    "tags": [
+      "behavior-change",
+      "systems"
+    ],
+    "likes": 1,
+    "views": 1,
+    "shares": 1
+  },
+  {
+    "id": "implementation-intentions",
+    "title": "Implementation Intentions",
+    "subtitle": "If-then plans that bypass willpower",
+    "opening": "I'll go to the gym tomorrow. I'll eat healthier. I'll start soon. Goals feel motivating. But they fail. Because goals don't include instructions.",
+    "essence": "If situation, then I will specific action. Pre-decide your behavior.",
+    "visual_image": "if-then.jpg",
+    "visual_caption": "Pre-made decisions that eliminate the moment of hesitation.",
+    "explanation": "Implementation intentions create specific if-then plans. Research shows people using them are 2-3x more likely to follow through. They remove the need to decide in the moment. You've already decided. When the situation arises, your brain executes the pre-planned response.",
+    "steps": [
+      {
+        "title": "Identify the Situation",
+        "description": "What specific cue or trigger will prompt action?"
+      },
+      {
+        "title": "Define the Action",
+        "description": "What exact behavior will you do? Be specific."
+      },
+      {
+        "title": "Create the If-Then Statement",
+        "description": "Write it down: If situation, then I will action."
+      },
+      {
+        "title": "Visualize It",
+        "description": "Mentally rehearse the situation and action."
+      }
+    ],
+    "example": "Alex wants to write more. He creates: If I sit at my desk in the morning, then I will immediately open my writing doc and write for 10 minutes. No debate. The decision is pre-made. Within 3 weeks, he has written more than the previous 6 months.",
+    "when_to_apply": [
+      "You have goals but struggle with follow-through",
+      "You rely too much on willpower",
+      "You want to automate good behaviors"
+    ],
+    "when_not_to_apply": [
+      "The situation is too unpredictable",
+      "You're over-planning instead of doing",
+      "You need flexibility over rules"
+    ],
+    "practice": "Write 3 implementation intentions for one goal. If situation, then I will action. Try for a week.",
+    "category": [
+      "habits",
+      "productivity"
+    ],
+    "tags": [
+      "behavior-change",
+      "planning"
+    ],
+    "likes": 0,
+    "views": 0
+  }
+]
