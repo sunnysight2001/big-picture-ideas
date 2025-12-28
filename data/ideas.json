@@ -56,7 +56,7 @@
     "subtitle": "Small actions, immediate momentum",
     "opening": "Productivity advice often focuses on grand systems. But most paralysis comes from tasks so small we dismiss them. The two-minute rule removes this friction.",
     "essence": "If it takes less than two minutes, do it now. Small completions create momentum.",
-    "visual_image": "two-minute.jpg",
+    "visual_image": "two-minute.png",
     "visual_caption": "Tiny actions completed immediately prevent mental clutter.",
     "explanation": "Our brains treat incomplete tasks as open loops. Every email you will respond to later occupies mental bandwidth. The Two-Minute Rule: if something takes less than two minutes, handle it immediately. This prevents the slow accumulation of small frictions.",
     "steps": [
@@ -100,7 +100,7 @@
       "momentum"
     ],
     "likes": 0,
-    "views": 0
+    "views": 5
   },
   {
     "id": "eisenhower-matrix",
@@ -108,7 +108,7 @@
     "subtitle": "Urgent is not the same as important",
     "opening": "We confuse motion with progress. The inbox demands attention. But urgency is not importance.",
     "essence": "Not everything urgent matters. Not everything important feels urgent.",
-    "visual_image": "eisenhower.jpg",
+    "visual_image": "eisenhower.png",
     "visual_caption": "Four quadrants that separate what demands attention from what deserves it.",
     "explanation": "The Eisenhower Matrix divides tasks into four quadrants: Urgent and Important (do now), Important but Not Urgent (schedule), Urgent but Not Important (delegate), Neither (eliminate). Most people live in quadrants 1 and 3. True productivity lives in quadrant 2.",
     "steps": [
@@ -149,7 +149,7 @@
       "focus"
     ],
     "likes": 0,
-    "views": 1
+    "views": 2
   },
   {
     "id": "parkinsons-law",
@@ -157,7 +157,7 @@
     "subtitle": "Work expands to fill the time available",
     "opening": "Give yourself a week to write a report, it takes a week. Give yourself three hours, it still gets done. This is about how deadlines shape work.",
     "essence": "Work expands to fill the time you allocate. Tighter deadlines create focus.",
-    "visual_image": "parkinsons.jpg",
+    "visual_image": "parkinsons.png",
     "visual_caption": "A task occupies exactly as much time as you give it.",
     "explanation": "Parkinson's Law states: Work expands to fill available time. Artificial abundance of time doesn't improve quality. It creates waste and overthinking. The solution: impose realistic constraints. When time is scarce, you focus on what matters.",
     "steps": [
@@ -206,7 +206,7 @@
     "subtitle": "Fixed time, flexible scope",
     "opening": "Most people plan by task. They work until it's done. But done is rarely clear. Timeboxing reverses this: you control the time.",
     "essence": "Assign fixed time blocks to tasks. When time ends, work ends or continues in the next box.",
-    "visual_image": "timeboxing.jpg",
+    "visual_image": "timeboxing.png",
     "visual_caption": "Your calendar becomes a series of containers.",
     "explanation": "Timeboxing allocates fixed time to an activity, then stops when time is up. This creates urgency, prevents perfectionism, and makes progress visible. It's about giving every task exactly the attention it deserves.",
     "steps": [
@@ -255,7 +255,7 @@
     "subtitle": "Group similar tasks to eliminate switching costs",
     "opening": "Every time you switch tasks, your brain stumbles. Email, then a call, then email again. Each shift costs focus. Batch processing eliminates these taxes.",
     "essence": "Group similar tasks together. Complete them in one focused session.",
-    "visual_image": "batching.jpg",
+    "visual_image": "batching.png",
     "visual_caption": "Concentrate energy into focused blocks instead of scattering it.",
     "explanation": "Context-switching reduces productivity by up to 40%. Batch processing groups similar tasks into dedicated time blocks. Instead of checking email 20 times, you check twice. The result: deeper focus, less fatigue.",
     "steps": [
@@ -304,7 +304,7 @@
     "subtitle": "People feel compelled to return favors",
     "opening": "A stranger holds the door. You feel obligated to thank them. A colleague helps. You want to return the favor. This is a psychological force.",
     "essence": "When you give first, people feel a natural obligation to give back.",
-    "visual_image": "reciprocity.jpg",
+    "visual_image": "reciprocity.png",
     "visual_caption": "The invisible debt created by kindness and its powerful pull.",
     "explanation": "Reciprocity is one of the strongest forces in behavior. When someone does something for us, we feel uncomfortable until we return the favor. Giving creates an almost involuntary urge to give back. But misuse it and it backfires. Authentic generosity works.",
     "steps": [
@@ -354,7 +354,7 @@
     "subtitle": "We look to others to decide what's right",
     "opening": "The restaurant is full, so you wait in line. The book has 10,000 reviews, so you buy it. We call this following trends. Psychologists call it social proof.",
     "essence": "People look to others' actions to determine their own. What's popular becomes more popular.",
-    "visual_image": "social-proof.jpg",
+    "visual_image": "social-proof.png",
     "visual_caption": "The crowd doesn't just follow, it creates its own gravity.",
     "explanation": "Social proof is when people assume others' actions reflect correct behavior. When uncertain, we look around and copy. This drives bestsellers, testimonials, crowded restaurants. Understanding social proof means understanding why perception becomes reality.",
     "steps": [
@@ -404,7 +404,7 @@
     "subtitle": "Hear what's unsaid, not just what's spoken",
     "opening": "Most people don't listen. They wait for their turn to talk. They hear words but miss meaning. Active listening is about being present.",
     "essence": "Listen to understand, not to reply. People feel heard before they feel helped.",
-    "visual_image": "listening.jpg",
+    "visual_image": "listening.png",
     "visual_caption": "True listening creates space for others to be fully understood.",
     "explanation": "Active listening is fully concentrating on what someone is saying before formulating a response. Most conversations are dueling monologues. Active listening means focusing completely, withholding judgment, reflecting back, and noticing emotions beneath words.",
     "steps": [
@@ -455,7 +455,7 @@
     "subtitle": "Speak without blame, listen without defense",
     "opening": "You never listen. You always do this. These sentences start conversations. They also end them. Nonviolent Communication offers a different way.",
     "essence": "Express needs and feelings without blame. Listen without taking offense.",
-    "visual_image": "nvc.jpg",
+    "visual_image": "nvc.png",
     "visual_caption": "A framework for speaking truth without triggering defensiveness.",
     "explanation": "Nonviolent Communication is a framework for expressing yourself honestly while fostering connection. The structure: Observation (state facts), Feeling (express emotion), Need (identify underlying need), Request (make clear ask). NVC removes blame and focuses on needs.",
     "steps": [
@@ -506,7 +506,7 @@
     "subtitle": "Build new habits on top of existing ones",
     "opening": "You want to meditate daily. But when? You want to read more. But where does it fit? New habits fail from lack of triggers. Habit stacking solves this.",
     "essence": "Link new habits to existing routines. After current habit, I will new habit.",
-    "visual_image": "habit-stack.jpg",
+    "visual_image": "habit-stack.png",
     "visual_caption": "New behaviors anchor to existing patterns, making them automatic.",
     "explanation": "Habit stacking leverages an insight: you already have dozens of automatic daily habits. Instead of trying to remember a new habit, link it to an existing one. After I pour coffee, I will meditate for 2 minutes. The existing habit becomes a trigger.",
     "steps": [
@@ -557,7 +557,7 @@
     "subtitle": "If-then plans that bypass willpower",
     "opening": "I'll go to the gym tomorrow. I'll eat healthier. I'll start soon. Goals feel motivating. But they fail. Because goals don't include instructions.",
     "essence": "If situation, then I will specific action. Pre-decide your behavior.",
-    "visual_image": "if-then.jpg",
+    "visual_image": "if-then.png",
     "visual_caption": "Pre-made decisions that eliminate the moment of hesitation.",
     "explanation": "Implementation intentions create specific if-then plans. Research shows people using them are 2-3x more likely to follow through. They remove the need to decide in the moment. You've already decided. When the situation arises, your brain executes the pre-planned response.",
     "steps": [
