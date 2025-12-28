@@ -5,7 +5,7 @@
     "subtitle": "Breaking complexity without overwhelm",
     "opening": "Big problems rarely defeat us through difficulty. They defeat us through density. When too many concerns are pressed together, the mind tightens. Clarity begins the moment you are willing to open the fruit.",
     "essence": "What overwhelms you is rarely one problem - it is many unnamed ones.",
-    "visual_image": "pomegranate.jpg",
+    "visual_image": "pomegranate.png",
     "visual_caption": "A complex problem becomes manageable once its parts are separated.",
     "explanation": "The mind struggles with complexity, not effort. When multiple concerns are emotionally tangled together, the brain treats them as a single threat. The Pomegranate Technique works because it removes emotional fusion. By separating a problem into independent parts, you lower its psychological weight.",
     "steps": [
@@ -39,6 +39,7 @@
       "The problem is simple but emotionally uncomfortable"
     ],
     "practice": "Take one overwhelming problem. Do not solve it. Write down its seeds. Stop there.",
+    "video": "https://www.youtube.com/embed/jY2yNErO0SQ",
     "category": [
       "thinking",
       "decision-making"
@@ -48,7 +49,7 @@
       "overwhelm"
     ],
     "likes": 0,
-    "views": 0
+    "views": 4
   },
   {
     "id": "two-minute-rule",
@@ -100,7 +101,7 @@
       "momentum"
     ],
     "likes": 0,
-    "views": 5
+    "views": 6
   },
   {
     "id": "eisenhower-matrix",
@@ -140,6 +141,7 @@
       "Your role requires constant reactive work"
     ],
     "practice": "List 10 things you did this week. Classify them. How much time in Q2?",
+    "video": "https://www.youtube.com/embed/bo84h4ZD9NU",
     "category": [
       "productivity",
       "time-management"
@@ -149,7 +151,7 @@
       "focus"
     ],
     "likes": 0,
-    "views": 2
+    "views": 4
   },
   {
     "id": "parkinsons-law",
@@ -198,7 +200,7 @@
       "deadlines"
     ],
     "likes": 0,
-    "views": 0
+    "views": 1
   },
   {
     "id": "timeboxing",
@@ -438,6 +440,7 @@
       "Speaker is manipulative"
     ],
     "practice": "In your next conversation, don't think about your response while they talk. Just listen.",
+    "video": "https://www.youtube.com/embed/ton-UQsApZw?si=PhpO__ZYGKuyv4Ts",
     "category": [
       "communication",
       "relationships"
@@ -447,7 +450,7 @@
       "connection"
     ],
     "likes": 0,
-    "views": 0
+    "views": 5
   },
   {
     "id": "nonviolent-communication",
@@ -489,6 +492,7 @@
       "Using it to manipulate"
     ],
     "practice": "Think of one recent conflict. Rewrite what you said using NVC: Observation, Feeling, Need, Request.",
+    "video": "https://www.youtube.com/embed/YpSZJSJpMaA",
     "category": [
       "communication",
       "relationships"
@@ -498,7 +502,7 @@
       "empathy"
     ],
     "likes": 0,
-    "views": 0
+    "views": 2
   },
   {
     "id": "habit-stacking",
@@ -539,6 +543,7 @@
       "Stacking too many at once"
     ],
     "practice": "Pick one current habit you do daily. Stack one tiny new habit onto it for 7 days.",
+    "video": "https://www.youtube.com/embed/XbWU3_7hTk8",
     "category": [
       "habits",
       "productivity"
@@ -548,7 +553,7 @@
       "systems"
     ],
     "likes": 1,
-    "views": 1,
+    "views": 2,
     "shares": 1
   },
   {
