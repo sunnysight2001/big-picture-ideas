@@ -225,30 +225,52 @@ def match_problem():
 
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
-    email = request.form.get('email', '')
-    if not email:
-        flash('Please enter a valid email address', 'error')
+    email = request.form.get('email', '').strip().lower()
+
+    # 1. Basic validation
+    if not email or '@' not in email:
+        flash('Please enter a valid email address.', 'error')
         return redirect(url_for('index'))
 
     os.makedirs('data', exist_ok=True)
     csv_path = os.path.join('data', 'subscribers.csv')
 
+    # 2. Create file if it does not exist
     if not os.path.exists(csv_path):
         with open(csv_path, 'w', encoding='utf-8') as f:
             f.write('email,subscribed_at\n')
 
+    # 3. Check if already subscribed
     with open(csv_path, 'r', encoding='utf-8') as f:
-        if email in [l.split(',')[0] for l in f.readlines()[1:]]:
-            flash('You are already subscribed!', 'info')
-            return redirect(url_for('index'))
+        existing_emails = {line.split(',')[0] for line in f.readlines()[1:]}
 
+    if email in existing_emails:
+        flash(
+            "You're already subscribed 😊 "
+            "If you don’t see our emails, please check your Spam or Promotions folder "
+            "and mark them as 'Not Spam'.",
+            'info'
+        )
+        return redirect(url_for('index'))
+
+    # 4. Save subscriber
     with open(csv_path, 'a', encoding='utf-8') as f:
         f.write(f"{email},{datetime.now().isoformat()}\n")
 
+    # 5. Send welcome email (best-effort)
     send_welcome_email(email)
 
-    flash('Thank you for subscribing! Check your email.', 'success')
+    # 6. Clear, confidence-building success message
+    flash(
+        "Thanks for subscribing! 🎉 "
+        "We've sent you a welcome email. "
+        "If you don’t see it within a minute, please check your Spam or Promotions folder "
+        "and mark it as 'Not Spam' so you don’t miss future ideas.",
+        'success'
+    )
+
     return redirect(url_for('index'))
+
 
 # ======================================================
 # API: LIKE & SHARE
