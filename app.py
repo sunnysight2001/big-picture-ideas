@@ -4,22 +4,22 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+ 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-this-in-production'  # Change this!
-
+ 
 # Load ideas from JSON
 def load_ideas():
     json_path = os.path.join('data', 'ideas.json')
     with open(json_path, 'r', encoding='utf-8') as f:
         return json.load(f)
-
+ 
 # Save ideas to JSON
 def save_ideas(ideas):
     json_path = os.path.join('data', 'ideas.json')
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(ideas, f, indent=2, ensure_ascii=False)
-
+ 
 # Get a single idea by ID
 def get_idea_by_id(idea_id):
     ideas = load_ideas()
@@ -27,7 +27,7 @@ def get_idea_by_id(idea_id):
         if idea['id'] == idea_id:
             return idea
     return None
-
+ 
 # HOME PAGE
 @app.route('/')
 def index():
@@ -39,8 +39,12 @@ def index():
         if 'category' in idea:
             themes.update(idea['category'])
     
-    # Get today's idea (first one for now, you can randomize)
-    todays_idea = ideas[0] if ideas else None
+    # Get today's idea - rotates daily
+    import datetime
+    today = datetime.date.today()
+    day_of_year = today.timetuple().tm_yday  # Day number (1-365)
+    todays_idea_index = day_of_year % len(ideas)  # Cycles through all ideas
+    todays_idea = ideas[todays_idea_index] if ideas else None
     
     # Limit to 4 themes and 4 ideas for homepage
     limited_themes = sorted(themes)[:4]
@@ -52,7 +56,7 @@ def index():
         themes=limited_themes,
         todays_idea=todays_idea
     )
-
+ 
 # INDIVIDUAL IDEA PAGE (with view tracking)
 @app.route('/idea/<idea_id>')
 def idea_detail(idea_id):
@@ -75,13 +79,13 @@ def idea_detail(idea_id):
     next_idea = ideas[(current_index + 1) % len(ideas)] if current_index is not None else None
     
     return render_template('idea.html', idea=idea, next_idea=next_idea)
-
+ 
 # THEME PAGE (optional)
 @app.route('/theme/<theme_name>')
 def theme_page(theme_name):
     ideas = load_ideas()
     filtered_ideas = [
-        idea for idea in ideas 
+        idea for idea in ideas
         if 'category' in idea and theme_name in idea['category']
     ]
     
@@ -90,13 +94,13 @@ def theme_page(theme_name):
         theme=theme_name,
         ideas=filtered_ideas
     )
-
+ 
 # ALL IDEAS PAGE
 @app.route('/ideas')
 def all_ideas():
     ideas = load_ideas()
     return render_template('all_ideas.html', ideas=ideas)
-
+ 
 # ALL THEMES PAGE
 @app.route('/themes')
 def all_themes():
@@ -109,7 +113,7 @@ def all_themes():
             themes.update(idea['category'])
     
     return render_template('all_themes.html', themes=sorted(themes))
-
+ 
 # PROBLEM MATCHER (show results page instead of direct redirect)
 @app.route('/match', methods=['POST'])
 def match_problem():
@@ -163,15 +167,15 @@ def match_problem():
         matched_ideas = [idea for score, idea in scored_ideas]
         
         # Show results page with all matches
-        return render_template('search_results.html', 
-                             query=problem, 
+        return render_template('search_results.html',
+                             query=problem,
                              ideas=matched_ideas)
     
     # If no matches, show message
-    return render_template('search_results.html', 
-                         query=problem, 
+    return render_template('search_results.html',
+                         query=problem,
                          ideas=[])
-
+ 
 # NEWSLETTER SUBSCRIBE
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
@@ -211,7 +215,7 @@ def subscribe():
     
     flash('Thank you for subscribing! Check your email for confirmation.', 'success')
     return redirect(url_for('index'))
-
+ 
 # Optional: Send welcome email
 def send_welcome_email(to_email):
     """
@@ -274,7 +278,7 @@ def send_welcome_email(to_email):
     except Exception as e:
         print(f"Error sending email: {e}")
         # Don't crash if email fails
-
+ 
 # LIKE AN IDEA (API endpoint)
 @app.route('/api/like/<idea_id>', methods=['POST'])
 def like_idea(idea_id):
@@ -287,7 +291,7 @@ def like_idea(idea_id):
             return jsonify({'success': True, 'likes': ideas[i]['likes']})
     
     return jsonify({'success': False, 'error': 'Idea not found'}), 404
-
+ 
 # SHARE AN IDEA (track share count)
 @app.route('/api/share/<idea_id>', methods=['POST'])
 def share_idea(idea_id):
@@ -303,6 +307,6 @@ def share_idea(idea_id):
             return jsonify({'success': True, 'shares': ideas[i]['shares']})
     
     return jsonify({'success': False, 'error': 'Idea not found'}), 404
-
+ 
 if __name__ == '__main__':
     app.run(debug=True)
