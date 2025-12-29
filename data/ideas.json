@@ -542,68 +542,280 @@
       "The new habit requires different context",
       "Stacking too many at once"
     ],
-    "practice": "Pick one current habit you do daily. Stack one tiny new habit onto it for 7 days.",
-    "video": "https://www.youtube.com/embed/XbWU3_7hTk8",
-    "category": [
-      "habits",
-      "productivity"
-    ],
-    "tags": [
-      "behavior-change",
-      "systems"
-    ],
-    "likes": 1,
-    "views": 2,
-    "shares": 1
-  },
-  {
-    "id": "implementation-intentions",
-    "title": "Implementation Intentions",
-    "subtitle": "If-then plans that bypass willpower",
-    "opening": "I'll go to the gym tomorrow. I'll eat healthier. I'll start soon. Goals feel motivating. But they fail. Because goals don't include instructions.",
-    "essence": "If situation, then I will specific action. Pre-decide your behavior.",
-    "visual_image": "if-then.png",
-    "visual_caption": "Pre-made decisions that eliminate the moment of hesitation.",
-    "explanation": "Implementation intentions create specific if-then plans. Research shows people using them are 2-3x more likely to follow through. They remove the need to decide in the moment. You've already decided. When the situation arises, your brain executes the pre-planned response.",
+  "practice": "Pick one current habit you do daily. Stack one tiny new habit onto it for 7 days.",
+  "video": "https://www.youtube.com/embed/XbWU3_7hTk8",
+  "category": [
+    "habits",
+    "productivity"
+  ],
+  "tags": [
+    "behavior-change",
+    "systems"
+  ],
+  "likes": 1,
+  "views": 2,
+  "shares": 1
+},
+{
+  "id": "implementation-intentions",
+  "title": "Implementation Intentions",
+  "subtitle": "If-then plans that bypass willpower",
+  "opening": "I'll go to the gym tomorrow. I'll eat healthier. I'll start soon. Goals feel motivating. But they fail. Because goals don't include instructions.",
+  "essence": "If situation, then I will specific action. Pre-decide your behavior.",
+  "visual_image": "if-then.png",
+  "visual_caption": "Pre-made decisions that eliminate the moment of hesitation.",
+  "explanation": "Implementation intentions create specific if-then plans. Research shows people using them are 2-3x more likely to follow through. They remove the need to decide in the moment. You've already decided. When the situation arises, your brain executes the pre-planned response.",
+  "steps": [
+    {
+      "title": "Identify the Situation",
+      "description": "What specific cue or trigger will prompt action?"
+    },
+    {
+      "title": "Define the Action",
+      "description": "What exact behavior will you do? Be specific."
+    },
+    {
+      "title": "Create the If-Then Statement",
+      "description": "Write it down: If situation, then I will action."
+    },
+    {
+      "title": "Visualize It",
+      "description": "Mentally rehearse the situation and action."
+    }
+  ],
+  "example": "Alex wants to write more. He creates: If I sit at my desk in the morning, then I will immediately open my writing doc and write for 10 minutes. No debate. The decision is pre-made. Within 3 weeks, he has written more than the previous 6 months.",
+  "when_to_apply": [
+    "You have goals but struggle with follow-through",
+    "You rely too much on willpower",
+    "You want to automate good behaviors"
+  ],
+  "when_not_to_apply": [
+    "The situation is too unpredictable",
+    "You're over-planning instead of doing",
+    "You need flexibility over rules"
+  ],
+  "practice": "Write 3 implementation intentions for one goal. If situation, then I will action. Try for a week.",
+  "category": [
+    "habits",
+    "productivity"
+  ],
+  "tags": [
+    "behavior-change",
+    "planning"
+  ],
+  "likes": 0,
+  "views": 0
+},
+{
+  "id": "teach-with-insight",
+    "title": "Teach with Insight",
+    "subtitle": "Change how the customer sees the problem",
+    "opening": "You explain features. The doctor nods. Nothing changes. Insight-based selling shifts the conversation from products to problems.",
+    "essence": "Customers don’t buy because they understand your product. They buy when they understand their problem differently.",
+    "visual_image": "teach-with-insight.png",
+    "visual_caption": "A new lens reveals a problem the customer didn’t know they had.",
+    "explanation": "Teaching with insight means showing the customer a hidden risk, gap, or missed opportunity in their current approach. Instead of responding to expressed needs, you reframe the situation so the customer sees a bigger issue. Once the problem is redefined, the solution becomes obvious.",
     "steps": [
       {
-        "title": "Identify the Situation",
-        "description": "What specific cue or trigger will prompt action?"
+        "title": "Start with a Familiar Truth",
+        "description": "Begin with something the customer already agrees with."
       },
       {
-        "title": "Define the Action",
-        "description": "What exact behavior will you do? Be specific."
+        "title": "Reveal a Hidden Gap",
+        "description": "Introduce a risk or issue they may be underestimating."
       },
       {
-        "title": "Create the If-Then Statement",
-        "description": "Write it down: If situation, then I will action."
+        "title": "Reframe the Core Problem",
+        "description": "Shift focus from surface symptoms to root causes."
       },
       {
-        "title": "Visualize It",
-        "description": "Mentally rehearse the situation and action."
+        "title": "Anchor to Impact",
+        "description": "Explain why this gap matters to outcomes or results."
       }
     ],
-    "example": "Alex wants to write more. He creates: If I sit at my desk in the morning, then I will immediately open my writing doc and write for 10 minutes. No debate. The decision is pre-made. Within 3 weeks, he has written more than the previous 6 months.",
+    "example": "Dr. Mehta says prescriptions are stable. Ajay agrees, then shares data showing most patients discontinue therapy after 30 days due to side effects. The conversation shifts from prescription numbers to long-term adherence.",
     "when_to_apply": [
-      "You have goals but struggle with follow-through",
-      "You rely too much on willpower",
-      "You want to automate good behaviors"
+      "Customers say everything is fine",
+      "Sales conversations feel repetitive",
+      "Price becomes the main objection"
     ],
     "when_not_to_apply": [
-      "The situation is too unpredictable",
-      "You're over-planning instead of doing",
-      "You need flexibility over rules"
+      "The customer is already overwhelmed",
+      "You lack credible data or insight",
+      "Early rapport is not yet built"
     ],
-    "practice": "Write 3 implementation intentions for one goal. If situation, then I will action. Try for a week.",
+    "practice": "In your next call, open with one insight about the customer’s practice instead of your brand.",
+    "video": "",
     "category": [
-      "habits",
-      "productivity"
+      "sales",
+      "mental-models"
     ],
     "tags": [
-      "behavior-change",
-      "planning"
+      "challenger-sale",
+      "insight-selling",
+      "reframing"
     ],
     "likes": 0,
-    "views": 0
+    "views": 0,
+    "shares": 0
+  },
+  {
+    "id": "constructive-tension",
+    "title": "Constructive Tension",
+    "subtitle": "Challenge without damaging trust",
+    "opening": "Agreeing feels polite. Challenging creates progress.",
+    "essence": "Growth conversations require respectful discomfort.",
+    "visual_image": "constructive-tension.png",
+    "visual_caption": "The right tension moves conversations forward.",
+    "explanation": "Constructive tension is the ability to question the customer’s current thinking while maintaining credibility. Instead of validating every belief, you introduce thoughtful contradictions that force reflection. The goal is not to win an argument, but to unlock insight.",
+    "steps": [
+      {
+        "title": "Acknowledge Their View",
+        "description": "Show you understand their current belief."
+      },
+      {
+        "title": "Introduce a Contradiction",
+        "description": "Share data or observation that challenges it."
+      },
+      {
+        "title": "Ask a Provoking Question",
+        "description": "Let the customer connect the dots."
+      },
+      {
+        "title": "Hold the Silence",
+        "description": "Give space for thinking instead of explaining."
+      }
+    ],
+    "example": "Dr. Rao believes generics are sufficient. Neha agrees on cost sensitivity, then asks why readmission rates remain high despite compliance. The doctor pauses and reconsiders.",
+    "when_to_apply": [
+      "Customers are stuck in status quo",
+      "Objections are habitual",
+      "Confidence is masking blind spots"
+    ],
+    "when_not_to_apply": [
+      "Trust is not yet established",
+      "The customer is emotionally defensive",
+      "You cannot support the challenge with facts"
+    ],
+    "practice": "Replace one agreement statement with a thoughtful, challenging question.",
+    "video": "",
+    "category": [
+      "sales",
+      "communication"
+    ],
+    "tags": [
+      "challenger-sale",
+      "objection-handling",
+      "executive-presence"
+    ],
+    "likes": 0,
+    "views": 0,
+    "shares": 0
+  },
+  {
+    "id": "tailor-for-stakeholders",
+    "title": "Tailor for Stakeholders",
+    "subtitle": "One story doesn’t fit everyone",
+    "opening": "The same message rarely works for every decision-maker.",
+    "essence": "Different stakeholders care about different value.",
+    "visual_image": "tailor-stakeholders.png",
+    "visual_caption": "Value sounds different depending on who is listening.",
+    "explanation": "Tailoring means adjusting your message based on the role, priorities, and risks of each stakeholder. Doctors care about outcomes, procurement about cost predictability, and nurses about ease of use. One solution, multiple value stories.",
+    "steps": [
+      {
+        "title": "Identify the Stakeholder",
+        "description": "Clinical, financial, or operational."
+      },
+      {
+        "title": "Map Their Priority",
+        "description": "Outcome, cost, effort, or risk."
+      },
+      {
+        "title": "Adapt Your Language",
+        "description": "Use terms that resonate with them."
+      },
+      {
+        "title": "Confirm Relevance",
+        "description": "Check if the message landed."
+      }
+    ],
+    "example": "Rohit discusses outcomes with the doctor, budget stability with procurement, and administration ease with nursing staff. All stakeholders align.",
+    "when_to_apply": [
+      "Multiple influencers are involved",
+      "Decisions are delayed",
+      "Consensus is missing"
+    ],
+    "when_not_to_apply": [
+      "There is only one decision-maker",
+      "You don’t know stakeholder priorities",
+      "Time is extremely limited"
+    ],
+    "practice": "Before your next call, write one benefit per stakeholder—not per product.",
+    "video": "",
+    "category": [
+      "sales",
+      "account-management"
+    ],
+    "tags": [
+      "stakeholder-management",
+      "hospital-selling",
+      "communication"
+    ],
+    "likes": 0,
+    "views": 0,
+    "shares": 0
+  },
+  {
+    "id": "take-control",
+    "title": "Take Control",
+    "subtitle": "Lead the sale without being aggressive",
+    "opening": "Customers expect guidance, not hesitation.",
+    "essence": "Confident leadership creates momentum in sales.",
+    "visual_image": "take-control.png",
+    "visual_caption": "Clear direction moves decisions forward.",
+    "explanation": "Taking control means guiding the conversation, handling objections directly, and clearly proposing next steps. It is not dominance, but leadership. Customers often rely on the salesperson to structure decisions.",
+    "steps": [
+      {
+        "title": "Set the Agenda",
+        "description": "Clarify why the discussion matters."
+      },
+      {
+        "title": "Address Resistance",
+        "description": "Don’t avoid objections or pricing concerns."
+      },
+      {
+        "title": "Propose Next Steps",
+        "description": "Make progress easy and clear."
+      },
+      {
+        "title": "Secure Commitment",
+        "description": "Confirm agreement before closing."
+      }
+    ],
+    "example": "Suresh reframes a discount request into a pilot program with clear success metrics, keeping value intact.",
+    "when_to_apply": [
+      "Negotiations stall",
+      "Meetings lack direction",
+      "Follow-ups keep slipping"
+    ],
+    "when_not_to_apply": [
+      "Early rapport is missing",
+      "The customer feels pressured",
+      "Authority is unclear"
+    ],
+    "practice": "End your next meeting with a clear next step and owner.",
+    "video": "",
+    "category": [
+      "sales",
+      "execution"
+    ],
+    "tags": [
+      "challenger-sale",
+      "negotiation",
+      "decision-making"
+    ],
+    "likes": 0,
+    "views": 0,
+    "shares": 0
   }
 ]
