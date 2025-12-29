@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
 import json
 import os
-import smtplib
 import sqlite3
 import hashlib
 from datetime import date, datetime
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 # ======================================================
 # APP SETUP
@@ -87,58 +86,45 @@ def track_view(page: str):
 # ======================================================
 
 def send_welcome_email(to_email: str) -> None:
-    # 🔍 TEMP DEBUG — ADD THESE LINES
-    print("DEBUG SMTP_SERVER =", os.getenv("SMTP_SERVER"))
-    print("DEBUG SMTP_PORT =", os.getenv("SMTP_PORT"))
-    print("DEBUG SENDER_EMAIL =", os.getenv("SENDER_EMAIL"))
-    print("DEBUG SENDER_PASSWORD SET =", bool(os.getenv("SENDER_PASSWORD")))
     try:
-        smtp_server = os.getenv('SMTP_SERVER')
-        sender_email = os.getenv('SENDER_EMAIL')
-        sender_password = os.getenv('SENDER_PASSWORD')
-        smtp_port_raw = os.getenv('SMTP_PORT', '587')
+        api_key = os.getenv("SENDGRID_API_KEY")
+        sender_email = os.getenv("SENDER_EMAIL")
 
-        if smtp_server is None or sender_email is None or sender_password is None:
-            print("Email not configured. Skipping email.")
+        if not api_key or not sender_email:
+            print("SendGrid not configured. Skipping email.")
             return
 
-        smtp_port = int(smtp_port_raw)
-
-        message = MIMEMultipart('alternative')
-        message['Subject'] = 'Welcome to Big Picture Ideas'
-        message['From'] = sender_email
-        message['To'] = to_email
-
-        text = (
-            "Welcome to Big Picture Ideas!\n\n"
-            "You’ll receive one powerful idea to improve thinking, clarity, and decision-making.\n\n"
-            "No spam. No noise. Just perspective.\n\n"
-            "– Big Picture Ideas"
+        message = Mail(
+            from_email=sender_email,
+            to_emails=to_email,
+            subject="Welcome to Big Picture Ideas",
+            plain_text_content=(
+                "Welcome to Big Picture Ideas!\n\n"
+                "You’ll receive one powerful idea to improve clarity and thinking.\n\n"
+                "No spam. No noise. Just perspective.\n\n"
+                "– Big Picture Ideas"
+            ),
+            html_content="""
+            <html>
+              <body style="font-family: Arial, sans-serif; color:#333;">
+                <h2>Welcome to Big Picture Ideas 👋</h2>
+                <p>You’ll receive <b>one powerful idea</b> to improve clarity and thinking.</p>
+                <p>No spam. No noise. Just perspective.</p>
+                <p>– <b>Big Picture Ideas</b></p>
+              </body>
+            </html>
+            """
         )
 
-        html = """
-        <html>
-          <body style="font-family: Arial, sans-serif; color:#333;">
-            <h2>Welcome to Big Picture Ideas 👋</h2>
-            <p>You’ll receive <b>one powerful idea</b> to improve clarity and thinking.</p>
-            <p>No spam. No noise. Just perspective.</p>
-            <p>– <b>Big Picture Ideas</b></p>
-          </body>
-        </html>
-        """
+        sg = SendGridAPIClient(api_key)
+        sg.send(message)
 
-        message.attach(MIMEText(text, 'plain'))
-        message.attach(MIMEText(html, 'html'))
-
-        with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
-            server.login(sender_email, sender_password)
-            server.sendmail(sender_email, to_email, message.as_string())
-
-        print(f"Welcome email sent to {to_email}")
+        print(f"Welcome email sent via SendGrid to {to_email}")
 
     except Exception as e:
-        print(f"Email error: {e}")
+        # Never crash user flow
+        print(f"SendGrid email failed but user subscribed: {e}")
+
 
 # ======================================================
 # ROUTES
