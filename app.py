@@ -87,6 +87,11 @@ def track_view(page: str):
 # ======================================================
 
 def send_welcome_email(to_email: str) -> None:
+    # 🔍 TEMP DEBUG — ADD THESE LINES
+    print("DEBUG SMTP_SERVER =", os.getenv("SMTP_SERVER"))
+    print("DEBUG SMTP_PORT =", os.getenv("SMTP_PORT"))
+    print("DEBUG SENDER_EMAIL =", os.getenv("SENDER_EMAIL"))
+    print("DEBUG SENDER_PASSWORD SET =", bool(os.getenv("SENDER_PASSWORD")))
     try:
         smtp_server = os.getenv('SMTP_SERVER')
         sender_email = os.getenv('SENDER_EMAIL')
