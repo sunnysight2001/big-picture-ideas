@@ -19,9 +19,18 @@ app.secret_key = 'your-secret-key-change-this-in-production'
 # ======================================================
 
 def load_ideas():
+    """Load ideas from JSON and enrich with database stats"""
     json_path = os.path.join('data', 'ideas.json')
     with open(json_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        ideas = json.load(f)
+    
+    # ALWAYS override with database stats (database is source of truth)
+    for idea in ideas:
+        idea['views'] = get_view_count(f"idea:{idea['id']}")
+        idea['likes'] = get_like_count(idea['id'])
+        idea['shares'] = 0  # Not tracking shares yet
+    
+    return ideas
 
 def get_idea_by_id(idea_id):
     for idea in load_ideas():
@@ -152,12 +161,7 @@ def send_welcome_email(to_email: str) -> None:
 def index():
     track_view("home")
 
-    ideas = load_ideas()
-
-    # Enrich ideas with stats from database
-    for idea in ideas:
-        idea['views'] = get_view_count(f"idea:{idea['id']}")
-        idea['likes'] = get_like_count(idea['id'])
+    ideas = load_ideas()  # Already enriched with stats in load_ideas()
 
     themes = set()
     for idea in ideas:
@@ -186,9 +190,7 @@ def idea_detail(idea_id):
     if not idea:
         return "Idea not found", 404
 
-    # Add stats from database
-    idea['views'] = get_view_count(f"idea:{idea_id}")
-    idea['likes'] = get_like_count(idea_id)
+    # Stats already enriched in load_ideas() via get_idea_by_id()
 
     ideas = load_ideas()
     idx = next((i for i, x in enumerate(ideas) if x['id'] == idea_id), None)
@@ -199,12 +201,7 @@ def idea_detail(idea_id):
 @app.route('/theme/<theme_name>')
 def theme_page(theme_name):
     track_view(f"theme:{theme_name}")
-    ideas = load_ideas()
-    
-    # Enrich with stats
-    for idea in ideas:
-        idea['views'] = get_view_count(f"idea:{idea['id']}")
-        idea['likes'] = get_like_count(idea['id'])
+    ideas = load_ideas()  # Already enriched with stats
     
     filtered = [i for i in ideas if theme_name in i.get('category', [])]
     return render_template('theme.html', theme=theme_name, ideas=filtered)
@@ -212,12 +209,7 @@ def theme_page(theme_name):
 @app.route('/ideas')
 def all_ideas():
     track_view("all-ideas")
-    ideas = load_ideas()
-    
-    # Enrich with stats
-    for idea in ideas:
-        idea['views'] = get_view_count(f"idea:{idea['id']}")
-        idea['likes'] = get_like_count(idea['id'])
+    ideas = load_ideas()  # Already enriched with stats
     
     return render_template('all_ideas.html', ideas=ideas)
 
@@ -239,12 +231,7 @@ def match_problem():
     if not problem:
         return redirect(url_for('index'))
 
-    ideas = load_ideas()
-    
-    # Enrich with stats
-    for idea in ideas:
-        idea['views'] = get_view_count(f"idea:{idea['id']}")
-        idea['likes'] = get_like_count(idea['id'])
+    ideas = load_ideas()  # Already enriched with stats
     
     words = set(problem.split())
     scored = []
