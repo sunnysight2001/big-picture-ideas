@@ -81,6 +81,24 @@ def track_view(page: str):
     conn.commit()
     conn.close()
 
+def get_view_count(page: str) -> int:
+    """Get total view count for a page"""
+    conn = sqlite3.connect(STATS_DB)
+    cur = conn.cursor()
+    cur.execute("SELECT COUNT(*) FROM page_views WHERE page = ?", (page,))
+    count = cur.fetchone()[0]
+    conn.close()
+    return count
+
+def get_like_count(idea_id: str) -> int:
+    """Get like count for an idea"""
+    conn = sqlite3.connect(STATS_DB)
+    cur = conn.cursor()
+    cur.execute("SELECT likes FROM idea_likes WHERE idea_id = ?", (idea_id,))
+    result = cur.fetchone()
+    conn.close()
+    return result[0] if result else 0
+
 # ======================================================
 # EMAIL (WELCOME MAIL)
 # ======================================================
@@ -100,7 +118,7 @@ def send_welcome_email(to_email: str) -> None:
             subject="Welcome to Big Picture Ideas",
             plain_text_content=(
                 "Welcome to Big Picture Ideas!\n\n"
-                "You’ll receive one powerful idea to improve clarity and thinking.\n\n"
+                "You'll receive one powerful idea to improve clarity and thinking.\n\n"
                 "No spam. No noise. Just perspective.\n\n"
                 "– Big Picture Ideas"
             ),
@@ -108,7 +126,7 @@ def send_welcome_email(to_email: str) -> None:
             <html>
               <body style="font-family: Arial, sans-serif; color:#333;">
                 <h2>Welcome to Big Picture Ideas 👋</h2>
-                <p>You’ll receive <b>one powerful idea</b> to improve clarity and thinking.</p>
+                <p>You'll receive <b>one powerful idea</b> to improve clarity and thinking.</p>
                 <p>No spam. No noise. Just perspective.</p>
                 <p>– <b>Big Picture Ideas</b></p>
               </body>
@@ -136,16 +154,26 @@ def index():
 
     ideas = load_ideas()
 
+    # Enrich ideas with stats from database
+    for idea in ideas:
+        idea['views'] = get_view_count(f"idea:{idea['id']}")
+        idea['likes'] = get_like_count(idea['id'])
+
     themes = set()
     for idea in ideas:
         themes.update(idea.get('category', []))
 
+    # Today's idea - rotates daily
     today = date.today()
     todays_idea = ideas[today.timetuple().tm_yday % len(ideas)] if ideas else None
 
+    # Latest ideas - last 4 added to JSON, shown newest first
+    latest_ideas = ideas[-4:] if len(ideas) >= 4 else ideas
+    latest_ideas.reverse()  # Show newest first
+
     return render_template(
         'index.html',
-        ideas=ideas[:4],
+        ideas=latest_ideas,
         themes=sorted(themes)[:4],
         todays_idea=todays_idea
     )
@@ -158,6 +186,10 @@ def idea_detail(idea_id):
     if not idea:
         return "Idea not found", 404
 
+    # Add stats from database
+    idea['views'] = get_view_count(f"idea:{idea_id}")
+    idea['likes'] = get_like_count(idea_id)
+
     ideas = load_ideas()
     idx = next((i for i, x in enumerate(ideas) if x['id'] == idea_id), None)
     next_idea = ideas[(idx + 1) % len(ideas)] if idx is not None else None
@@ -168,13 +200,26 @@ def idea_detail(idea_id):
 def theme_page(theme_name):
     track_view(f"theme:{theme_name}")
     ideas = load_ideas()
+    
+    # Enrich with stats
+    for idea in ideas:
+        idea['views'] = get_view_count(f"idea:{idea['id']}")
+        idea['likes'] = get_like_count(idea['id'])
+    
     filtered = [i for i in ideas if theme_name in i.get('category', [])]
     return render_template('theme.html', theme=theme_name, ideas=filtered)
 
 @app.route('/ideas')
 def all_ideas():
     track_view("all-ideas")
-    return render_template('all_ideas.html', ideas=load_ideas())
+    ideas = load_ideas()
+    
+    # Enrich with stats
+    for idea in ideas:
+        idea['views'] = get_view_count(f"idea:{idea['id']}")
+        idea['likes'] = get_like_count(idea['id'])
+    
+    return render_template('all_ideas.html', ideas=ideas)
 
 @app.route('/themes')
 def all_themes():
@@ -195,6 +240,12 @@ def match_problem():
         return redirect(url_for('index'))
 
     ideas = load_ideas()
+    
+    # Enrich with stats
+    for idea in ideas:
+        idea['views'] = get_view_count(f"idea:{idea['id']}")
+        idea['likes'] = get_like_count(idea['id'])
+    
     words = set(problem.split())
     scored = []
 
@@ -247,7 +298,7 @@ def subscribe():
     if email in existing_emails:
         flash(
             "You're already subscribed 😊 "
-            "If you don’t see our emails, please check your Spam or Promotions folder "
+            "If you don't see our emails, please check your Spam or Promotions folder "
             "and mark them as 'Not Spam'.",
             'info'
         )
@@ -264,8 +315,8 @@ def subscribe():
     flash(
         "Thanks for subscribing! 🎉 "
         "We've sent you a welcome email. "
-        "If you don’t see it within a minute, please check your Spam or Promotions folder "
-        "and mark it as 'Not Spam' so you don’t miss future ideas.",
+        "If you don't see it within a minute, please check your Spam or Promotions folder "
+        "and mark it as 'Not Spam' so you don't miss future ideas.",
         'success'
     )
 
