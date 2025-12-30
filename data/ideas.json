@@ -47,9 +47,7 @@
     "tags": [
       "complexity",
       "overwhelm"
-    ],
-    "likes": 0,
-    "views": 4
+    ]
   },
   {
     "id": "two-minute-rule",
@@ -99,9 +97,7 @@
     "tags": [
       "efficiency",
       "momentum"
-    ],
-    "likes": 0,
-    "views": 6
+    ]
   },
   {
     "id": "eisenhower-matrix",
@@ -149,9 +145,7 @@
     "tags": [
       "prioritization",
       "focus"
-    ],
-    "likes": 0,
-    "views": 4
+    ]
   },
   {
     "id": "parkinsons-law",
@@ -199,9 +193,7 @@
     "tags": [
       "efficiency",
       "deadlines"
-    ],
-    "likes": 0,
-    "views": 1
+    ]
   },
   {
     "id": "timeboxing",
@@ -249,9 +241,7 @@
     "tags": [
       "focus",
       "planning"
-    ],
-    "likes": 0,
-    "views": 0
+    ]
   },
   {
     "id": "batch-processing",
@@ -299,9 +289,7 @@
     "tags": [
       "focus",
       "efficiency"
-    ],
-    "likes": 0,
-    "views": 0
+    ]
   },
   {
     "id": "reciprocity-principle",
@@ -350,9 +338,7 @@
     "tags": [
       "persuasion",
       "trust"
-    ],
-    "likes": 0,
-    "views": 0
+    ]
   },
   {
     "id": "social-proof",
@@ -401,9 +387,7 @@
     "tags": [
       "psychology",
       "decision-making"
-    ],
-    "likes": 0,
-    "views": 0
+    ]
   },
   {
     "id": "active-listening",
@@ -453,9 +437,7 @@
     "tags": [
       "empathy",
       "connection"
-    ],
-    "likes": 0,
-    "views": 5
+    ]
   },
   {
     "id": "nonviolent-communication",
@@ -505,9 +487,7 @@
     "tags": [
       "conflict-resolution",
       "empathy"
-    ],
-    "likes": 0,
-    "views": 2
+    ]
   },
   {
     "id": "habit-stacking",
@@ -556,10 +536,7 @@
   "tags": [
     "behavior-change",
     "systems"
-  ],
-  "likes": 1,
-  "views": 2,
-  "shares": 1
+  ]
 },
 {
   "id": "implementation-intentions",
@@ -608,9 +585,7 @@
   "tags": [
     "behavior-change",
     "planning"
-  ],
-  "likes": 0,
-  "views": 0
+  ]
 },
 {
   "id": "teach-with-insight",
@@ -651,7 +626,7 @@
       "Early rapport is not yet built"
     ],
     "practice": "In your next call, open with one insight about the customer’s practice instead of your brand.",
-    "video": "",
+    "video": "https://www.youtube.com/embed/fOHwgY6ActQ",
     "category": [
       "sales",
       "mental-models"
@@ -660,10 +635,7 @@
       "challenger-sale",
       "insight-selling",
       "reframing"
-    ],
-    "likes": 0,
-    "views": 0,
-    "shares": 0
+    ]
   },
   {
     "id": "constructive-tension",
@@ -713,10 +685,7 @@
       "challenger-sale",
       "objection-handling",
       "executive-presence"
-    ],
-    "likes": 0,
-    "views": 0,
-    "shares": 0
+    ]
   },
   {
     "id": "tailor-for-stakeholders",
@@ -757,7 +726,7 @@
       "Time is extremely limited"
     ],
     "practice": "Before your next call, write one benefit per stakeholder—not per product.",
-    "video": "",
+    "video": "https://www.youtube.com/embed/FmFTOuASZo0",
     "category": [
       "sales",
       "account-management"
@@ -766,10 +735,7 @@
       "stakeholder-management",
       "hospital-selling",
       "communication"
-    ],
-    "likes": 0,
-    "views": 0,
-    "shares": 0
+    ]    
   },
   {
     "id": "take-control",
@@ -810,7 +776,7 @@
       "Authority is unclear"
     ],
     "practice": "End your next meeting with a clear next step and owner.",
-    "video": "",
+    "video": "https://www.youtube.com/embed/QpN0BB1Itf4",
     "category": [
       "sales",
       "execution"
@@ -819,9 +785,6 @@
       "challenger-sale",
       "negotiation",
       "decision-making"
-    ],
-    "likes": 0,
-    "views": 0,
-    "shares": 0
+    ]
   }
 ]

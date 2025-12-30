@@ -166,12 +166,10 @@
         <!-- META -->
         <div class="idea-meta">
           <div class="meta-left">
-            <span>👁 <span id="view-count">{{ idea.views | default(0) }}</span></span>
-            <span>❤️ <span id="like-count">{{ idea.likes | default(0) }}</span></span>
+            
           </div>
           <div class="meta-right">
-            <button class="meta-btn" id="like-btn" onclick="likeIdea('{{ idea.id }}')">Like</button>
-            <button class="meta-btn" id="share-btn" onclick="shareIdea('{{ idea.id }}')">Share</button>
+             <button class="meta-btn" id="share-btn" onclick="shareIdea('{{ idea.id }}')">Share</button>
           </div>
         </div>
 
@@ -217,44 +215,7 @@
       document.getElementById('progressBar').style.transform = `scaleX(${scrolled})`;
     });
 
-    // Like button functionality
-    function likeIdea(ideaId) {
-      const likeBtn = document.getElementById('like-btn');
-      const likeCount = document.getElementById('like-count');
-      
-      // Disable button temporarily
-      likeBtn.disabled = true;
-      likeBtn.textContent = 'Liking...';
-      
-      fetch(`/api/like/${ideaId}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          likeCount.textContent = data.likes;
-          likeBtn.textContent = 'Liked! ❤️';
-          likeBtn.style.background = '#10b981';
-          likeBtn.style.color = 'white';
-          likeBtn.style.borderColor = '#10b981';
-          
-          // Re-enable after 2 seconds
-          setTimeout(() => {
-            likeBtn.disabled = false;
-            likeBtn.textContent = 'Like';
-          }, 2000);
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        likeBtn.disabled = false;
-        likeBtn.textContent = 'Like';
-      });
-    }
-
+    
     // Share button functionality
     function shareIdea(ideaId) {
       const shareBtn = document.getElementById('share-btn');
