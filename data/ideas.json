@@ -676,7 +676,7 @@
       "You cannot support the challenge with facts"
     ],
     "practice": "Replace one agreement statement with a thoughtful, challenging question.",
-    "video": "",
+    "video": "https://www.youtube.com/embed/uXaOyESzlRQ",
     "category": [
       "sales",
       "communication"
@@ -786,5 +786,57 @@
       "negotiation",
       "decision-making"
     ]
-  }
+  },
+  {
+"id": "woop-goal-model",
+"title": "WOOP Goal Model",
+"subtitle": "Turn wishes into actionable plans",
+"opening": "Hoping feels good. Planning makes change real.",
+"essence": "Lasting change needs both vision and obstacle-aware planning.",
+"visual_image": "woop-model.png",
+"visual_caption": "From wishful thinking to concrete if–then action.",
+"explanation": "The WOOP model (Wish, Outcome, Obstacle, Plan) is a practical mental strategy for turning intentions into behavior. Instead of only visualizing success, you deliberately surface the biggest obstacles and design specific if–then responses in advance. This combination of positive imagery and realistic planning improves follow-through on goals and habits.",
+"steps": [
+{
+"title": "Wish",
+"description": "Define a meaningful, feasible goal you want to achieve in the near future."
+},
+{
+"title": "Outcome",
+"description": "Picture the best possible result and how your situation will improve when you succeed."
+},
+{
+"title": "Obstacle",
+"description": "Identify the most likely internal or external obstacle that could stop you."
+},
+{
+"title": "Plan",
+"description": "Create a clear if–then plan for how you will respond when that obstacle appears."
+}
+],
+"example": "Riya wants to complete an instructional design certificate in four months while working full time. She imagines feeling confident leading learning strategy conversations and being seen as the go-to expert. She notices that evening fatigue and mobile distractions usually derail her study time. Riya sets an if–then plan: “If it is 7:30 pm on weekdays, then I will put my phone in another room, sit at my desk, and study for 45 minutes before dinner.”",
+"when_to_apply": [
+"You want to build or change a habit",
+"Important goals keep getting postponed",
+"Motivation is high but follow-through is inconsistent",
+"Coaching conversations need a simple, concrete structure"
+],
+"when_not_to_apply": [
+"The goal is vague or imposed with no personal relevance",
+"You have not yet identified a realistic next-step behavior",
+"The situation requires complex multi-stakeholder planning instead of an individual plan"
+],
+"practice": "Pick one short-term goal for this week. Write one WOOP for it: one sentence for your wish, one for your outcome, one for your main obstacle, and one if–then plan. Review it daily.",
+"video": "https://www.youtube.com/embed/lbrwVzf2VJA",
+"category": [
+"productivity",
+"behavior-change",
+"coaching"
+],
+"tags": [
+"goal-setting",
+"habit-formation",
+"self-regulation"
+]
+}
 ]
