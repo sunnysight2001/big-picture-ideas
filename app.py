@@ -74,10 +74,6 @@ def send_welcome_email(to_email: str) -> None:
 # ======================================================
 # ROUTES
 # ======================================================
-@app.route('/')
-def home():
-    return render_template('index.html')
-
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -102,14 +98,14 @@ def index():
     today = date.today()
     todays_idea = ideas[today.timetuple().tm_yday % len(ideas)] if ideas else None
 
-    # Latest ideas - last 4 added to JSON, shown newest first
-    latest_ideas = ideas[-4:] if len(ideas) >= 4 else ideas
+    # Latest ideas - last 3 added to JSON, shown newest first
+    latest_ideas = ideas[-3:] if len(ideas) >= 3 else ideas
     latest_ideas.reverse()
 
     return render_template(
         'index.html',
         ideas=latest_ideas,
-        themes=sorted(themes)[:4],
+        themes=sorted(themes)[:3],
         todays_idea=todays_idea
     )
 
