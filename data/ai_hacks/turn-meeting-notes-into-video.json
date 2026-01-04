@@ -1,0 +1,106 @@
+{
+  "id": "turn-meeting-notes-into-video",
+  "slug": "turn-meeting-notes-into-video",
+  "title": "Turn Meeting Notes into a Clear AI Video",
+  "subtitle": "Convert messy discussions into short, visual explanations people actually remember",
+
+  "hero_image": "meeting-notes-video.png",
+  "hero_caption": "When information is visual, alignment improves and follow-ups reduce.",
+
+  "sections": [
+    {
+      "type": "highlight",
+      "title": "The Core Insight",
+      "content": "Most meetings fail not because decisions are bad, but because outcomes are poorly communicated. Converting meeting notes into short videos forces clarity, narrative, and shared understanding — something text summaries rarely achieve."
+    },
+
+    {
+      "type": "unique",
+      "title": "Why Video Works Better Than Notes",
+      "content": "Written summaries assume people will read carefully and interpret correctly. A short video creates a single shared narrative — showing priorities, context, and intent — reducing misalignment and repeated clarifications."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 1: Leadership & Management Teams",
+      "content": "After leadership meetings, decisions often get diluted as they move down the organization. A 2–3 minute AI-generated video summarizing priorities and rationale helps teams align faster without additional meetings."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 2: Project & Cross-Functional Teams",
+      "content": "Cross-functional teams struggle with context gaps. Turning meeting notes into a visual walkthrough helps stakeholders quickly understand what changed, why it matters, and what action is expected from them."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 3: Trainers & Facilitators",
+      "content": "Trainers can convert workshop debrief notes into recap videos that reinforce learning, capture key insights, and extend the life of a session beyond the meeting room."
+    },
+
+    {
+      "type": "steps",
+      "title": "The Notes-to-Video Workflow",
+      "items": [
+        "Collect raw meeting notes, chat logs, or transcripts",
+        "Ask AI to extract decisions, themes, and key actions",
+        "Convert the summary into a simple story flow (context → decision → next steps)",
+        "Describe scenes visually instead of rewriting text",
+        "Generate a short AI video using a scene-based video tool"
+      ]
+    },
+
+    {
+      "type": "prompt",
+      "title": "Prompt to Convert Notes into Video Scenes",
+      "content": "Act as a communication strategist.\n\nFrom the meeting notes below:\n1. Extract the key context\n2. List decisions made\n3. Identify next actions and owners\n4. Convert this into a 4-scene video outline\n\nScene format:\nScene 1: Context\nScene 2: Key decision\nScene 3: Impact\nScene 4: Next steps\n\nMeeting notes:\n<<<PASTE NOTES HERE>>>"
+    },
+
+    {
+      "type": "video",
+      "title": "Example: Meeting Summary as Video",
+      "video_url": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "video_caption": "A short AI-generated recap video created from leadership meeting notes."
+    },
+
+    {
+      "type": "apply",
+      "title": "When This Works Best",
+      "items": [
+        "Leadership or strategy meetings",
+        "Project kick-offs or reviews",
+        "Training or workshop recaps",
+        "Remote or hybrid team communication"
+      ]
+    },
+
+    {
+      "type": "avoid",
+      "title": "When Not to Use This",
+      "items": [
+        "Highly confidential or sensitive discussions",
+        "Meetings with unresolved or conflicting decisions",
+        "Legal or compliance-critical documentation"
+      ]
+    },
+
+    {
+      "type": "practice",
+      "title": "Try This Once",
+      "content": "Take last week’s meeting notes. Create a 90-second video explaining only three things: what changed, why it matters, and what happens next. Notice how much clearer the communication feels."
+    }
+  ],
+
+  "tags": [
+    "meeting-notes",
+    "ai-video",
+    "team-communication",
+    "productivity"
+  ],
+
+  "category": [
+    "learn-ai",
+    "ai-video-tools",
+    "workplace-ai"
+  ]
+}

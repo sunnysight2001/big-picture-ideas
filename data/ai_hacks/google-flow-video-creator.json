@@ -1,0 +1,105 @@
+{
+  "id": "google-flow-video-creator",
+  "slug": "google-flow-video-creator",
+  "title": "Create Story-Driven AI Videos with Google Flow",
+  "subtitle": "A scene-first approach to AI video creation that feels cinematic, not mechanical",
+
+  "hero_image": "google-flow-hero.jpg",
+  "hero_caption": "Google Flow helps creators think like directors — not video editors.",
+
+  "sections": [
+    {
+      "type": "highlight",
+      "title": "The Core Insight",
+      "content": "Most AI video tools fail because users treat video as a single prompt. Google Flow is different. It is designed around scenes, transitions, and narrative progression — which aligns naturally with how humans understand stories."
+    },
+
+    {
+      "type": "unique",
+      "title": "What Makes Google Flow Different",
+      "content": "Google Flow is not just another text-to-video generator. Its real strength lies in how it encourages creators to define mood, camera movement, lighting, and visual continuity across scenes. This reduces randomness and produces videos that feel intentional rather than stitched together."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 1: Educators & Trainers",
+      "content": "Trainers often struggle to convert concepts into engaging visuals. With Google Flow, an instructor can break a topic into 4–6 scenes (problem, tension, explanation, resolution) and generate a short explainer video that supports learning without complex editing tools."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 2: Content Creators & YouTubers",
+      "content": "Creators can use Google Flow to prototype videos quickly before investing in full production. It works especially well for concept videos, intros, visual metaphors, and storytelling-driven Shorts or Reels."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 3: Marketers & Brand Teams",
+      "content": "Marketing teams can test multiple creative directions rapidly. By keeping the same message but changing scene mood, lighting, or pacing, teams can explore which narrative resonates best before committing to high-cost production."
+    },
+
+    {
+      "type": "steps",
+      "title": "The Google Flow Video Framework",
+      "items": [
+        "Start with one clear message or idea you want the viewer to remember",
+        "Break the message into 4–6 logical scenes",
+        "Define mood, lighting, camera movement, and visual style for each scene",
+        "Let Google Flow generate and connect scenes into a cohesive video",
+        "Review and refine scene descriptions instead of rewriting the entire prompt"
+      ]
+    },
+
+    {
+      "type": "prompt",
+      "title": "Scene Prompt Template",
+      "content": "Create a cinematic video scene.\n\nMood: reflective and hopeful\nLighting: soft natural light\nCamera: slow pan from left to right\nScene description: A person working late at night, ideas visualized as subtle glowing elements around them.\nStyle: modern, realistic, minimal."
+    },
+
+    {
+      "type": "video",
+      "title": "Watch: Google Flow in Action",
+      "video_url": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "video_caption": "Example of a short AI-generated video built using scene-based prompting in Google Flow."
+    },
+
+    {
+      "type": "apply",
+      "title": "Where Google Flow Works Best",
+      "items": [
+        "Short explainer or concept videos",
+        "Educational and training visuals",
+        "Brand storytelling and narrative ads",
+        "Early-stage creative exploration"
+      ]
+    },
+
+    {
+      "type": "avoid",
+      "title": "Where It Has Limitations",
+      "items": [
+        "Highly technical step-by-step tutorials",
+        "Videos requiring exact brand assets or logos",
+        "Dialogue-heavy or lip-sync-critical content"
+      ]
+    },
+
+    {
+      "type": "practice",
+      "title": "Try This Once",
+      "content": "Pick one idea you want to explain. Write five scene descriptions on paper before touching the tool. Feed them sequentially into Google Flow. Notice how the output feels more coherent and intentional than a single long prompt."
+    }
+  ],
+
+  "tags": [
+    "google-flow",
+    "ai-video",
+    "storytelling",
+    "content-creation"
+  ],
+
+  "category": [
+    "learn-ai",
+    "ai-video-tools"
+  ]
+}

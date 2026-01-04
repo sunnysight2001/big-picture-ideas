@@ -1,0 +1,23 @@
+[
+  {
+    "id": "google-flow-video-creator",
+    "slug": "google-flow-video-creator",
+    "title": "Create Story-Driven Videos Using Google Flow",
+    "subtitle": "Turn simple ideas into cinematic AI videos",
+    "tags": ["google-flow", "ai-video"]
+  },
+  {
+    "id": "meeting-notes-video",
+    "slug": "meeting-notes-video",
+    "title": "Turn Meeting Notes into Videos",
+    "subtitle": "From raw notes to visual explanation",
+    "tags": ["ai-video", "productivity"]
+  },
+  {
+  "id": "ld-prompt-playbook",
+  "slug": "ld-prompt-playbook",
+  "title": "AI Prompt Playbook for L&D",
+  "subtitle": "A practical prompt book to design better learning, not just faster content",
+  "tags": ["L&D", "Prompt Engineering", "AI for Learning"]
+}
+]

@@ -1,0 +1,91 @@
+{
+  "id": "ld-prompt-playbook",
+  "slug": "ld-prompt-playbook",
+  "title": "The AI Prompt Structuring Playbook for L&D",
+  "subtitle": "A practical prompt book to help L&D teams design better thinking, not just better content",
+
+  "hero_image": "ld-prompt-playbook.png",
+  "hero_caption": "Good prompts don’t ask for content. Great prompts design thinking.",
+
+  "sections": [
+    {
+      "type": "highlight",
+      "title": "The Core Insight",
+      "content": "Most L&D professionals struggle with AI not because the tools are weak, but because prompts are unstructured. This playbook shifts the focus from writing longer prompts to designing structured instructions that mirror real learning and performance needs."
+    },
+
+    {
+      "type": "unique",
+      "title": "What Makes This Prompt Book Different",
+      "content": "Unlike generic prompt lists, this playbook introduces a repeatable 6-block prompt framework tailored specifically for Learning & Development. It aligns AI outputs to adult learning principles, workplace performance, and real business contexts rather than generic content creation."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 1: Training Needs Analysis (TNA)",
+      "content": "L&D teams can use the prompt framework to design structured TNA workflows that separate skill gaps from performance barriers. This helps move conversations away from ‘training requests’ toward capability and system-level diagnosis."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 2: Turning Feedback into Action",
+      "content": "Post-training feedback often remains descriptive but not actionable. The prompts in this playbook help analyze feedback data to identify root causes, improvement themes, and concrete next steps that L&D teams can act on immediately."
+    },
+
+    {
+      "type": "use_case",
+      "title": "Use Case 3: Instructional Storyboarding",
+      "content": "Instructional designers can use the prompt structures to convert complex skills into story-based learning journeys. This supports scenario design, microlearning creation, and facilitator-ready learning flows."
+    },
+
+    {
+      "type": "steps",
+      "title": "The 6-Block L&D Prompt Framework",
+      "items": [
+        "Define the ROLE: Lock AI into the right experience and domain",
+        "Set the CONTEXT: Explain the learning and business reality",
+        "Clarify the TASK: State the exact job to be done",
+        "Add CONSTRAINTS: Boundaries such as audience, tone, time, and format",
+        "Specify OUTPUT FORMAT: Tables, steps, slides, storyboards, or frameworks",
+        "Define SUCCESS CRITERIA: What ‘good’ looks like and how it will be used"
+      ]
+    },
+
+    {
+      "type": "prompt",
+      "title": "Reusable Master Prompt for L&D",
+      "content": "Act as an experienced Learning & Development expert with deep understanding of adult learning and workplace performance.\n\nContext:\n[Describe the business situation, learning need, audience maturity, and usage scenario]\n\nTask:\n[Clearly state what you want AI to create]\n\nConstraints:\n- Target audience: [ ]\n- Experience level: [ ]\n- Time or length limits: [ ]\n- Tone: [ ]\n- Learning modality: [ ]\n\nOutput Format:\n[Specify table, steps, slides, storyboard, or framework]\n\nSuccess Criteria:\nThe output should be practical, immediately usable by L&D teams, and lead to measurable performance improvement."
+    },
+
+    {
+      "type": "apply",
+      "title": "Where This Playbook Works Best",
+      "items": [
+        "Corporate L&D and capability-building teams",
+        "Instructional designers and learning consultants",
+        "Facilitators designing workshops or academies",
+        "Organizations experimenting with AI in learning"
+      ]
+    },
+
+    {
+      "type": "practice",
+      "title": "How to Use This Prompt Book",
+      "content": "Pick one real L&D task you are currently working on. Redesign your prompt using the 6-block structure. Compare the AI output with your earlier attempts. The difference will be immediately visible. Subscribe to get this prompt book and more in your inbox."
+    }
+
+  ],
+
+  "tags": [
+    "ld",
+    "prompt-engineering",
+    "learning-design",
+    "ai-for-ld"
+  ],
+
+  "category": [
+    "learn-ai",
+    "ld-playbooks",
+    "prompt-books"
+  ]
+}

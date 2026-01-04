@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7FQHL0SFD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G7FQHL0SFD');
+  </script>
+
+  <meta charset="UTF-8">
+  <title>{{ hack.title }} – Learn AI | Big Picture Ideas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Reuse Idea styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/idea.css') }}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body class="idea-page">
+
+<!-- Reading Progress -->
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="idea-page-bg">
+  <div class="container">
+
+    <!-- BACK NAV -->
+    <nav class="nav-header">
+      <a href="/learn_ai" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Learn AI
+      </a>
+    </nav>
+
+    <article class="idea-card">
+
+      <!-- HEADER -->
+      <div class="idea-header">
+        <h1>{{ hack.title }}</h1>
+        <p class="idea-subtitle">{{ hack.subtitle }}</p>
+      </div>
+
+      <!-- HERO IMAGE -->
+      {% if hack.hero_image %}
+      <section class="idea-visual">
+        <img
+          src="{{ url_for('static', filename='images/ai/' + hack.hero_image) }}"
+          alt="{{ hack.title }}"
+          loading="lazy"
+        >
+        {% if hack.hero_caption %}
+          <p class="visual-caption">{{ hack.hero_caption }}</p>
+        {% endif %}
+      </section>
+      {% endif %}
+
+      <!-- 🔥 SECTION-DRIVEN CONTENT (CORE FIX) -->
+      {% for section in hack.sections %}
+
+        {% if section.type == "highlight" %}
+        <section class="idea-essence">
+          <strong>{{ section.title }}</strong>
+          <p>{{ section.content }}</p>
+        </section>
+
+        {% elif section.type == "unique" %}
+        <section class="idea-explanation">
+          <h3>{{ section.title }}</h3>
+          <p>{{ section.content }}</p>
+        </section>
+
+        {% elif section.type == "use_case" %}
+        <section class="idea-explanation">
+          <h3>{{ section.title }}</h3>
+          <p>{{ section.content }}</p>
+        </section>
+
+        {% elif section.type == "steps" %}
+        <section class="idea-steps">
+          <h3>{{ section.title }}</h3>
+          <ol>
+            {% for item in section["items"] %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ol>
+        </section>
+
+        {% elif section.type == "prompt" %}
+        <section class="idea-example">
+          <h3>{{ section.title }}</h3>
+          <pre style="white-space: pre-wrap;">{{ section.content }}</pre>
+        </section>
+
+        {% elif section.type == "video" %}
+        <section class="idea-video" style="margin:56px 0;">
+          <h3 style="text-align:center;margin-bottom:24px;">{{ section.title }}</h3>
+
+          <div class="video-container">
+            <iframe
+              src="{{ section.video_url }}"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+
+          {% if section.video_caption %}
+          <p class="video-caption">{{ section.video_caption }}</p>
+          {% endif %}
+        </section>
+
+        {% elif section.type == "apply" %}
+        <section class="idea-apply">
+          <h3>{{ section.title }}</h3>
+          <ul>
+            {% for item in section["items"] %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        {% elif section.type == "avoid" %}
+        <section class="idea-avoid">
+          <h3>{{ section.title }}</h3>
+          <ul>
+            {% for item in section["items"] %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        {% elif section.type == "practice" %}
+        <section class="idea-practice">
+          <h3>{{ section.title }}</h3>
+          <p>{{ section.content }}</p>
+        </section>
+
+        {% endif %}
+
+      {% endfor %}
+
+      <!-- NEXT AI HACK -->
+      {% if next_hack %}
+      <a href="/learn_ai/{{ next_hack.slug }}" class="next-idea-nav">
+        <div>
+          <div class="next-idea-label">Next AI Hack</div>
+          <h4 class="next-idea-title">{{ next_hack.title }}</h4>
+        </div>
+        <div class="next-idea-link">
+          Continue →
+        </div>
+      </a>
+      {% endif %}
+
+      <!-- NEWSLETTER -->
+      <section class="idea-newsletter">
+        <h3>Learn AI Practically</h3>
+        <p class="muted">One usable AI idea every week.</p>
+
+        <form class="newsletter-form" action="/subscribe" method="POST">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+    </article>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll', () => {
+  const winScroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById('progressBar').style.transform = `scaleX(${winScroll / height})`;
+});
+</script>
+
+</body>
+</html>

@@ -27,6 +27,27 @@ def get_idea_by_id(idea_id):
             return idea
     return None
 
+def load_ai_hacks():
+    json_path = os.path.join('data', 'ai_hacks.json')
+    if os.path.exists(json_path):
+        with open(json_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return []
+
+def get_ai_hack_by_slug(slug):
+    json_path = os.path.join('data', 'ai_hacks', f'{slug}.json')
+    if os.path.exists(json_path):
+        with open(json_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return None
+
+def get_next_ai_hack(slug):
+    hacks = load_ai_hacks()  # listing file
+    idx = next((i for i, x in enumerate(hacks) if x.get('slug') == slug), None)
+    if idx is not None and len(hacks) > 1:
+        return hacks[(idx + 1) % len(hacks)]
+    return None
+
 # ======================================================
 # EMAIL (WELCOME MAIL)
 # ======================================================
@@ -78,13 +99,47 @@ def send_welcome_email(to_email: str) -> None:
 def about():
     return render_template('about.html')
 
+@app.route('/all_ideas')
+def all_ideas():
+    ideas = load_ideas()
+    return render_template('all_ideas.html', ideas=ideas)
+    
+
+@app.route('/ideas')
+def ideas_redirect():
+    ideas = load_ideas()
+    return render_template('all_ideas.html', ideas=ideas)
+
 @app.route('/workshop')
 def workshop():
     return render_template('workshop.html')
 
+@app.route('/learn_ai')
+def learn_ai():
+    ai_items = load_ai_hacks()
+    return render_template('learn_ai.html', ai_items=ai_items)
+
 @app.route('/resources')
 def resources():
     return render_template('resources.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
+
+@app.route('/learn_ai/<slug>')
+def learn_ai_detail(slug):
+    hack = get_ai_hack_by_slug(slug)
+    next_hack = get_next_ai_hack(slug)
+    return render_template(
+        'ai_hack.html',
+        hack=hack,
+        next_hack=next_hack
+    )
 
 @app.route('/')
 def index():
@@ -127,10 +182,6 @@ def theme_page(theme_name):
     ideas = load_ideas()
     filtered = [i for i in ideas if theme_name in i.get('category', [])]
     return render_template('theme.html', theme=theme_name, ideas=filtered)
-
-@app.route('/ideas')
-def all_ideas():
-    return render_template('all_ideas.html', ideas=load_ideas())
 
 @app.route('/themes')
 def all_themes():

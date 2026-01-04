@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn AI - Big Picture Ideas</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Reuse same CSS as All Ideas -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/all_ideas">Idea</a>
+    <a href="/learn_ai"><strong>Learn AI</strong></a>
+    <a href="/workshop">Workshop</a>
+    <a href="/resources">Free Resources</a>
+    <a href="/contact">Contact</a>
+    <a href="/privacy">Privacy</a>
+</nav>
+
+<div class="container" style="padding-top: 40px;">
+
+    <!-- Back Link -->
+    <header style="margin-bottom: 40px;">
+        <a href="/" class="back-link"
+           style="display: inline-flex; align-items: center; gap: 8px;
+           padding: 10px 18px; background: white; border-radius: 999px;
+           color: #2d3436; text-decoration: none; font-size: 0.9rem;
+           font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+           transition: all 0.2s ease;">
+            ← Back to Home
+        </a>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="margin-bottom: 3rem;">
+        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; color: #2d3436;">
+            Learn AI
+        </h1>
+        <p style="color: #636e72; font-size: 1.1rem;">
+            Practical AI hacks, prompts, workflows, and frameworks you can apply immediately
+        </p>
+    </section>
+
+    <!-- AI Tiles Grid -->
+    <section class="section">
+        <div class="grid">
+
+            {% for item in ai_items %}
+            <a href="{{ url_for('learn_ai_detail', slug=item.slug) }}" class="card">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.subtitle }}</p>
+
+                <div class="card-meta"
+                     style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                    {% for tag in item.tags[:3] %}
+                    <span class="tag"
+                          style="background: #f3f4f6; color: #636e72;
+                          padding: 4px 12px; border-radius: 999px;
+                          font-size: 0.8rem; font-weight: 500;">
+                        #{{ tag }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </a>
+            {% endfor %}
+
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

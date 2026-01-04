@@ -838,5 +838,117 @@
 "habit-formation",
 "self-regulation"
 ]
+},
+{
+  "id": "meddicc",
+  "title": "MEDDICC",
+  "subtitle": "Qualify deals with discipline, not hope",
+  "opening": "The deal feels strong. The customer is positive. Then it dies. MEDDICC prevents wishful selling.",
+  "essence": "Deals close when value, authority, and process are clear.",
+  "visual_image": "meddicc.png",
+  "visual_caption": "Strong deals are built on qualification, not optimism.",
+  "explanation": "MEDDICC is a deal qualification framework used to assess whether a sales opportunity is real and winnable. It forces clarity on metrics, decision-making, economic buyers, pain points, champions, and competition. If one element is weak, the deal is at risk.",
+  "steps": [
+    {
+      "title": "Metrics",
+      "description": "What measurable value will the customer gain?"
+    },
+    {
+      "title": "Economic Buyer",
+      "description": "Who has final financial authority?"
+    },
+    {
+      "title": "Decision Criteria",
+      "description": "How will the solution be evaluated?"
+    },
+    {
+      "title": "Decision Process",
+      "description": "What steps must happen before approval?"
+    },
+    {
+      "title": "Identify Pain",
+      "description": "What problem is important enough to act on?"
+    },
+    {
+      "title": "Champion",
+      "description": "Who is personally invested in your success?"
+    },
+    {
+      "title": "Competition",
+      "description": "What alternatives are being considered?"
+    }
+  ],
+  "example": "Priya realizes the doctor likes her brand but isn’t the final decision-maker. Procurement controls pricing, and no clear metrics are defined. She reworks the approach, aligns outcomes, builds a champion, and strengthens the deal.",
+  "when_to_apply": [
+    "Large or complex deals",
+    "Institutional or hospital selling",
+    "When pipelines look healthy but closures are weak"
+  ],
+  "when_not_to_apply": [
+    "Small transactional sales",
+    "Single-call decisions",
+    "Low-risk repeat orders"
+  ],
+  "practice": "Review one active deal and score each MEDDICC element as strong, weak, or missing.",
+  "video": "",
+  "category": [
+    "sales",
+    "deal-management"
+  ],
+  "tags": [
+    "meddicc",
+    "deal-qualification",
+    "enterprise-selling"
+  ]
+},
+{
+  "id": "spin-selling",
+  "title": "SPIN Selling",
+  "subtitle": "Guide customers to discover value themselves",
+  "opening": "You ask questions. The customer answers. But nothing moves. SPIN Selling fixes this by asking the right questions in the right order.",
+  "essence": "People don’t act on stated needs. They act on realized problems and implications.",
+  "visual_image": "spin-selling.png",
+  "visual_caption": "Well-sequenced questions lead customers to their own conclusions.",
+  "explanation": "SPIN Selling is a questioning framework that helps customers uncover the seriousness of their problems themselves. Instead of pitching solutions early, you guide the conversation through Situation, Problem, Implication, and Need-Payoff questions. This builds urgency naturally and avoids resistance.",
+  "steps": [
+    {
+      "title": "Situation Questions",
+      "description": "Understand the customer’s current setup and context."
+    },
+    {
+      "title": "Problem Questions",
+      "description": "Identify difficulties, dissatisfactions, or inefficiencies."
+    },
+    {
+      "title": "Implication Questions",
+      "description": "Explore the consequences of those problems if unchanged."
+    },
+    {
+      "title": "Need–Payoff Questions",
+      "description": "Help the customer articulate the value of solving the problem."
+    }
+  ],
+  "example": "Amit asks Dr. Sharma about current therapy protocols (Situation), then explores patient drop-offs (Problem). He discusses long-term complications due to non-adherence (Implication). Finally, he asks how outcomes would improve if adherence increased (Need–Payoff). The doctor now wants a solution.",
+  "when_to_apply": [
+    "When customers are unsure they have a problem",
+    "When urgency is low",
+    "When sales conversations feel superficial"
+  ],
+  "when_not_to_apply": [
+    "When the problem is already obvious",
+    "When time is extremely limited",
+    "When customers want direct recommendations"
+  ],
+  "practice": "In your next call, ask at least one implication question before mentioning your product.",
+  "video": "",
+  "category": [
+    "sales",
+    "questioning"
+  ],
+  "tags": [
+    "spin-selling",
+    "consultative-selling",
+    "needs-analysis"
+  ]
 }
 ]
