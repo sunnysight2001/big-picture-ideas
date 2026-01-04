@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | Big Picture Ideas</title>
+    <meta name="description" content="Learn about Big Picture Ideas — a clarity-first thinking and learning platform focused on practical frameworks, AI workshops, and real-world application.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+:root {
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --text: #2d3436;
+  --muted: #636e72;
+  --accent: #0984e3;
+  --accent-hover: #0770c4;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.05);
+  --shadow-hover: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== HERO WITH AUTO-SCROLL BANNER ===== */
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin: 24px auto 64px;
+  max-width: 1200px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.4) 40%,
+    rgba(0,0,0,0.1) 100%
+  );
+  z-index: 1;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 56px 48px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  color: white;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  opacity: 0.95;
+  margin: 0;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== NAVIGATION ===== */
+
+nav {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a strong {
+  color: var(--accent);
+}
+
+/* ===== ABOUT PAGE CONTENT ===== */
+
+.about-section {
+  max-width: 900px;
+  margin: 80px auto 120px;
+  padding: 0 24px;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 48px 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.about-highlight {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  margin: 48px 0;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+}
+
+.about-section ul {
+  margin: 24px 0 32px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.about-section li {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+  color: var(--text);
+  padding-left: 32px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.about-section li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .home-hero {
+    height: 60vh;
+    max-height: 450px;
+    margin: 16px 16px 48px;
+    border-radius: 16px;
+  }
+
+  .home-hero-content {
+    padding: 32px 24px;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    margin: 60px auto 80px;
+    padding: 0 20px;
+  }
+
+  .about-section h1 {
+    font-size: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+    margin-top: 36px;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+
+  .about-highlight {
+    padding: 24px 28px;
+  }
+
+  nav {
+    padding: 16px 20px;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    height: 50vh;
+    max-height: 400px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .about-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.4rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+    </style>
+</head>
+
+<body>
+<!-- HERO -->
+<section class="home-hero">
+  <div class="hero-slides">
+    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200" class="hero-slide active" alt="Think clearer" loading="eager">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200" class="hero-slide" alt="Act better" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=1200" class="hero-slide" alt="Big ideas" loading="lazy">
+  </div>
+
+  <div class="home-hero-content">
+    <h1 class="hero-title">About Big Picture Ideas</h1>
+    <p class="hero-subtitle">Clarity-first thinking for real work</p>
+  </div>
+</section>
+
+<!-- Navigation -->
+<nav>
+    <a href="/">Home</a>
+    <a href="/about"><strong>About Us</strong></a>
+    <a href="/workshop">Workshop</a>
+    <a href="/resources">Free Resources</a>
+</nav>
+
+<!-- Page Content -->
+<main class="about-section">
+    <h1>About Big Picture Ideas</h1>
+
+    <p>
+        Big Picture Ideas is a thinking and learning platform created to help professionals cut through noise,
+        simplify complex ideas, and focus on what truly matters in real work.
+    </p>
+
+    <p>
+        In a world full of information, tools, and trends, clarity has become the real advantage.
+        This platform exists to translate big concepts—across productivity, learning, marketing,
+        leadership, and artificial intelligence—into practical frameworks and usable tools.
+    </p>
+
+    <div class="about-highlight">
+        <h2>Our Philosophy</h2>
+
+        <p>
+            We believe ideas are only valuable when they can be applied.
+            Instead of chasing trends or jargon, Big Picture Ideas focuses on:
+        </p>
+
+        <ul>
+            <li>Clear thinking over complexity</li>
+            <li>Frameworks over opinions</li>
+            <li>Practical application over theory</li>
+            <li>Long-term skill-building over short-term hacks</li>
+        </ul>
+    </div>
+
+    <h2>What We Do</h2>
+
+    <p>
+        Through articles, frameworks, and curated resources, the website helps individuals and teams
+        build better thinking habits and decision-making skills.
+    </p>
+
+    <p>
+        Alongside the content, we also design and deliver <strong>practical AI workshops</strong>
+        and <strong>ready-to-use toolkits</strong> focused on prompt engineering,
+        real use cases, and everyday workflows that professionals can apply from Day 1.
+    </p>
+
+    <h2>Who This Is For</h2>
+
+    <ul>
+        <li>Professionals who want clarity, not noise</li>
+        <li>Teams exploring practical AI adoption</li>
+        <li>Managers and trainers building future-ready skills</li>
+        <li>Anyone who values structured thinking and real-world application</li>
+    </ul>
+
+    <p style="font-size: 1.15rem; font-weight: 600; margin-top: 48px;">
+        Big Picture Ideas is not about doing more. It's about thinking better.
+    </p>
+</main>
+
+<!-- Footer -->
+<footer>
+    © 2026 Big Picture Ideas
+</footer>
+
+<script>
+// Hero slideshow functionality
+const slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+
+function showNextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+// Change slide every 5 seconds
+setInterval(showNextSlide, 5000);
+</script>
+
+</body>
+</html>

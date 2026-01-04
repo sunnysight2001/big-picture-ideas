@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Resources | Big Picture Ideas</title>
+    <meta name="description" content="Free frameworks, prompts, and thinking tools from Big Picture Ideas. Coming soon.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --text: #2d3436;
+  --muted: #636e72;
+  --accent: #0984e3;
+  --accent-hover: #0770c4;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== HERO ===== */
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin: 24px auto 64px;
+  max-width: 1200px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.2)
+  );
+  z-index: 1;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 56px 48px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: white;
+  opacity: 0.95;
+}
+
+/* ===== NAVIGATION ===== */
+
+nav {
+  padding: 20px 24px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+nav a strong {
+  color: var(--accent);
+}
+
+/* ===== PAGE CONTENT ===== */
+
+.about-section {
+  max-width: 900px;
+  margin: 80px auto 120px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.about-highlight {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 36px;
+  margin: 48px 0;
+  text-align: left;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+}
+
+.about-highlight h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+
+.about-highlight ul {
+  list-style: none;
+}
+
+.about-highlight li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.about-highlight li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+  color: var(--muted);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .home-hero {
+    height: 60vh;
+    margin: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="home-hero">
+  <div class="hero-slides">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200"
+         class="hero-slide"
+         alt="Resources coming soon">
+  </div>
+
+  <div class="home-hero-content">
+    <h1 class="hero-title">Free Resources</h1>
+    <p class="hero-subtitle">Frameworks, prompts, and tools — coming soon</p>
+  </div>
+</section>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/workshop">Workshop</a>
+    <a href="/resources"><strong>Free Resources</strong></a>
+</nav>
+
+<!-- CONTENT -->
+<main class="about-section">
+    <h1>Coming Soon</h1>
+
+    <p>
+        We’re building a curated library of thinking frameworks,
+        AI prompts, and practical tools you can apply immediately.
+    </p>
+
+    <div class="about-highlight">
+        <h2>What to Expect</h2>
+        <ul>
+            <li>Clarity-first thinking frameworks</li>
+            <li>Ready-to-use AI prompts</li>
+            <li>Productivity and decision-making tools</li>
+            <li>Practical guides for real work</li>
+        </ul>
+    </div>
+
+    <p style="font-weight:600;">
+        Launching soon. Stay tuned.
+    </p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Big Picture Ideas
+</footer>
+
+</body>
+</html>

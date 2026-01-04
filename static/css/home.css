@@ -122,6 +122,35 @@ body {
   }
 }
 
+/* ===== NAVIGATION ===== */
+
+nav {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a strong {
+  color: var(--accent);
+}
 /* ===== LAYOUT ===== */
 
 .container {

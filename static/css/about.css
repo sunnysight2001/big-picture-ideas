@@ -1,0 +1,255 @@
+:root {
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --text: #2d3436;
+  --muted: #636e72;
+  --accent: #0984e3;
+  --accent-hover: #0770c4;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.05);
+  --shadow-hover: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== HERO WITH AUTO-SCROLL BANNER ===== */
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin: 24px auto 64px;
+  max-width: 1200px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* Slideshow container */
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual slides */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* Overlay gradient - more sophisticated */
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.4) 40%,
+    rgba(0,0,0,0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* Text container */
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 56px 48px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  color: white;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  opacity: 0.95;
+  margin: 0;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== LAYOUT ===== */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px 80px;
+}
+
+.section { 
+  margin-bottom: 5rem;
+}
+
+.center { 
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-header a {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.section-header a:hover {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  transform: translateX(4px);
+}
+/* ===== ABOUT PAGE CONTENT ===== */
+
+.about-section {
+  max-width: 900px;
+  margin: 80px auto 120px;
+  padding: 0 24px;
+}
+
+/* Section headings */
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Paragraph text */
+.about-section p {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+
+/* Muted supporting text */
+.about-section p.muted {
+  color: var(--muted);
+}
+
+/* Philosophy / highlight block */
+.about-highlight {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  margin: 48px 0;
+  box-shadow: var(--shadow);
+}
+
+/* List styling */
+.about-section ul {
+  margin: 16px 0 32px 20px;
+}
+
+.about-section li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* Divider */
+.about-divider {
+  height: 1px;
+  background: #e6e6e6;
+  margin: 64px 0;
+}
+
+/* Closing statement emphasis */
+.about-closing {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .about-section {
+    margin: 60px auto 80px;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-highlight {
+    padding: 24px;
+  }
+}
