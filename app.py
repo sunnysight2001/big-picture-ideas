@@ -4,7 +4,9 @@ import os
 from datetime import date, datetime
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+from dotenv import load_dotenv
 
+load_dotenv()
 # ======================================================
 # APP SETUP
 # ======================================================
@@ -112,7 +114,13 @@ def ideas_redirect():
 
 @app.route('/workshop')
 def workshop():
-    return render_template('workshop.html')
+    razorpay_key = os.environ.get('RAZORPAY_KEY_ID', 'rzp_test_default')
+    print("=" * 50)
+    print(f"Razorpay Key from env: {razorpay_key}")
+    print(f"Key length: {len(razorpay_key)}")
+    print(f"Starts with rzp_: {razorpay_key.startswith('rzp_')}")
+    print("=" * 50)
+    return render_template('workshop.html', razorpay_key=razorpay_key)
 
 @app.route('/learn_ai')
 def learn_ai():
@@ -258,6 +266,7 @@ def subscribe():
     with open(csv_path, 'a', encoding='utf-8') as f:
         f.write(f"{email},{datetime.now().isoformat()}\n")
 
+    # ✅ THESE MUST BE INSIDE THE FUNCTION
     send_welcome_email(email)
 
     flash(
@@ -267,7 +276,8 @@ def subscribe():
         'success'
     )
 
-    return redirect(url_for('index'))
+    next_page = request.form.get('next')
+    return redirect(next_page or url_for('index'))
 
 # ======================================================
 # SHARE API (optional - just for tracking if you want analytics later)
@@ -278,6 +288,14 @@ def share_idea(idea_id):
     # Just acknowledge the share
     from flask import jsonify
     return jsonify({'success': True})
+
+# ======================================================
+# doawnload route
+# ======================================================
+
+@app.route('/download')
+def download():
+    return render_template('download.html')
 
 # ======================================================
 # LOCAL RUN
