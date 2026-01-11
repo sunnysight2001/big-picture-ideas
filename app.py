@@ -2,13 +2,14 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 import json
 from datetime import date, datetime
-from dotenv import load_dotenv
 import razorpay
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-
-load_dotenv()
-
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass
 
 # -----------------------------------
 # ENV VARIABLES
