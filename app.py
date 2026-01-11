@@ -7,12 +7,35 @@ from sendgrid.helpers.mail import Mail
 from dotenv import load_dotenv
 
 load_dotenv()
+except ImportError:
+pass
+
+# -----------------------------------
+# ENV VARIABLES
+# -----------------------------------
+SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
+RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")
+RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET")
+
 # ======================================================
 # APP SETUP
 # ======================================================
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-this-in-production'
+
+# -----------------------------------
+# RAZORPAY SETUP
+# -----------------------------------
+import razorpay
+
+if RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
+    razorpay_client = razorpay.Client(
+        auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET)
+    )
+else:
+    razorpay_client = None
+    print("⚠️ Razorpay keys not configured")
 
 # ======================================================
 # CONTENT (IDEAS JSON)

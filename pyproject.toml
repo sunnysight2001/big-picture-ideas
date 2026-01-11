@@ -7,4 +7,6 @@ dependencies = [
     "flask>=3.1.2",
     "gunicorn>=21.2.0",
     sendgrid>=6.11.0
+    python-dotenv = "^1.0.0"
+    razorpay
 ]
