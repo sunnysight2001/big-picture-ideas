@@ -77,7 +77,7 @@
             <div class="flex flex-wrap justify-center gap-8 mb-10 fade-in-up">
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">📅</span>
-                    <span class="text-xl font-semibold">25th Jan 2026</span>
+                    <span class="text-xl font-semibold">7th Feb 2026</span>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-3xl">⏰</span>
@@ -448,373 +448,113 @@
         </div>
     </section>
 
-    <!-- PRICING & REGISTRATION SECTION -->
-    <section id="register" class="bg-gradient-to-br from-purple-500 to-purple-800 py-20 px-5">
-        <div class="max-w-4xl mx-auto">
-            <!-- Pricing Card -->
-            <div class="bg-white rounded-3xl p-12 shadow-2xl mb-10">
-                <div class="text-center mb-10">
-                    <div class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold mb-6 uppercase tracking-wide">
-                        🎯 Limited Time Offer - 80% Off
-                    </div>
-                    
-                    <h2 class="text-4xl font-extrabold mb-4 text-gray-800">
-                        Secure Your Spot Today
-                    </h2>
-                    
-                    <div class="flex items-center justify-center gap-4 mb-2">
-                        <span class="text-3xl text-gray-500 line-through">₹499</span>
-                        <span class="text-6xl font-black text-purple-600">₹99</span>
-                    </div>
-                    <p class="text-green-600 font-semibold text-xl">
-                        Save ₹400 - Early Bird Discount!
-                    </p>
-                </div>
+<!-- REGISTRATION -->
+<section id="register" class="bg-gradient-to-br from-purple-500 to-purple-800 py-20 px-6">
+    <div class="max-w-3xl mx-auto bg-white rounded-3xl p-12 shadow-2xl">
 
-                <!-- Registration Form -->
-                <div class="space-y-6">
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-800">Full Name *</label>
-                        <input
-                            type="text"
-                            id="name"
-                            required
-                            class="w-full px-4 py-4 text-lg border-2 border-gray-300 rounded-xl focus:border-purple-600 focus:outline-none transition-colors"
-                            placeholder="Enter your full name"
-                        />
-                    </div>
+        <div class="text-center mb-10">
+            <div class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full font-bold mb-4">
+                🎯 Limited Time Offer
+            </div>
 
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-800">Email Address *</label>
-                        <input
-                            type="email"
-                            id="email"
-                            required
-                            class="w-full px-4 py-4 text-lg border-2 border-gray-300 rounded-xl focus:border-purple-600 focus:outline-none transition-colors"
-                            placeholder="your.email@example.com"
-                        />
-                    </div>
+            <h2 class="text-4xl font-extrabold mb-2 text-gray-800">
+                Secure Your Spot Today
+            </h2>
 
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-800">Phone Number *</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            required
-                            pattern="[0-9]{10}"
-                            class="w-full px-4 py-4 text-lg border-2 border-gray-300 rounded-xl focus:border-purple-600 focus:outline-none transition-colors"
-                            placeholder="10-digit mobile number"
-                        />
-                    </div>
-
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-800">Years of Experience</label>
-                        <input
-                            type="text"
-                            id="experience"
-                            class="w-full px-4 py-4 text-lg border-2 border-gray-300 rounded-xl focus:border-purple-600 focus:outline-none transition-colors"
-                            placeholder="e.g., 5 years in L&D"
-                        />
-                    </div>
-
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-800">Which AI tools are you using?</label>
-                        <input
-                            type="text"
-                            id="aiTools"
-                            class="w-full px-4 py-4 text-lg border-2 border-gray-300 rounded-xl focus:border-purple-600 focus:outline-none transition-colors"
-                            placeholder="e.g., ChatGPT, Gemini, None yet"
-                        />
-                    </div>
-
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-800">What do you want to accomplish post this workshop?</label>
-                        <textarea
-                            id="goals"
-                            rows="4"
-                            class="w-full px-4 py-4 text-lg border-2 border-gray-300 rounded-xl focus:border-purple-600 focus:outline-none transition-colors resize-y"
-                            placeholder="Share your goals and expectations..."
-                        ></textarea>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-4 text-gray-800">🎁 Included Bonuses:</h3>
-                        <ul class="space-y-2 text-gray-700 list-disc list-inside text-lg">
-                            <li>Prompt templates you used today (video, presentation, visuals)</li>
-                            <li>AI-L&D workflow guide</li>
-                            <li>30-Day WhatsApp Mentorship</li>
-                            <li>Certificate of Completion</li>
-                        </ul>
-                    </div>
-
-                    <button
-                        id="payButton"
-                        onclick="handlePayment()"
-                        class="w-full bg-orange-500 hover:bg-orange-600 text-white py-5 text-xl font-bold rounded-xl transition-all shadow-lg hover:scale-105"
-                    >
-                        Pay ₹99 & Secure Your Spot 🚀
-                    </button>
-
-                    <p class="text-center text-gray-500 text-sm">
-                        🔒 Secure payment powered by Razorpay
-                    </p>
-                </div>
-
-                    </div>
-                </div>
+            <div class="flex justify-center items-center gap-4">
+                <span class="text-3xl text-gray-400 line-through">₹499</span>
+                <span class="text-6xl font-black text-purple-600">₹99</span>
             </div>
         </div>
-    </section>
 
-    <!-- Success Message (Hidden by default) -->
-    <div id="successMessage" class="hidden min-h-screen bg-gradient-to-br from-purple-500 to-purple-800 flex items-center justify-center p-5">
-        <div class="bg-white rounded-3xl p-12 max-w-2xl text-center shadow-2xl">
-            <div class="text-7xl mb-6">🎉</div>
-            <h1 class="text-4xl font-bold mb-4 text-gray-800">
-                Registration Successful!
-            </h1>
-            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                Thank you for registering! You'll receive a confirmation email shortly with workshop details and access instructions.
-            </p>
-            <div class="bg-gray-50 rounded-2xl p-8 mb-8 text-left">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">Workshop Details:</h3>
-                <p class="mb-3 text-gray-600 text-lg">📅 Date: 25th January 2026</p>
-                <p class="mb-3 text-gray-600 text-lg">⏰ Time: 10:00 AM - 12:00 PM IST</p>
-                <p class="text-gray-600 text-lg">💻 Mode: Virtual (Zoom link will be shared)</p>
+        <!-- FORM -->
+        <div class="space-y-6">
+            <div>
+                <label class="font-semibold">Full Name *</label>
+                <input id="name" class="w-full mt-1 px-4 py-4 border-2 rounded-xl" placeholder="Your name">
             </div>
-            <div class="bg-yellow-50 border-4 border-yellow-400 rounded-2xl p-6 mb-8">
-                <p class="text-yellow-800 font-semibold text-lg">
-                    📱 You'll be added to our WhatsApp group for 30-day mentorship support!
-                </p>
+
+            <div>
+                <label class="font-semibold">Email *</label>
+                <input id="email" type="email" class="w-full mt-1 px-4 py-4 border-2 rounded-xl" placeholder="you@email.com">
             </div>
-            <button
-                onclick="window.location.href='/'"
-                class="bg-purple-600 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:bg-purple-700 transition-all hover:scale-105"
-            >
-                Back to Home
+
+            <div>
+                <label class="font-semibold">Phone *</label>
+                <input id="phone" class="w-full mt-1 px-4 py-4 border-2 rounded-xl" placeholder="10-digit mobile">
+            </div>
+
+            <div>
+                <label class="font-semibold">Years of Experience</label>
+                <input id="experience" class="w-full mt-1 px-4 py-4 border-2 rounded-xl">
+            </div>
+
+            <div>
+                <label class="font-semibold">AI Tools You Use</label>
+                <input id="aiTools" class="w-full mt-1 px-4 py-4 border-2 rounded-xl">
+            </div>
+
+            <div>
+                <label class="font-semibold">Your Goal From This Workshop</label>
+                <textarea id="goals" rows="3" class="w-full mt-1 px-4 py-4 border-2 rounded-xl"></textarea>
+            </div>
+
+            <button onclick="redirectToPayment()"
+                class="w-full bg-orange-500 hover:bg-orange-600 text-white py-5 text-xl font-bold rounded-xl transition">
+                Pay ₹99 & Secure Your Spot 🚀
             </button>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-10 text-center text-gray-600">
-        © 2026 Big Picture Ideas | Transform Your Training with AI
-    </footer>
-
-    <!-- Success Message - Link to be shared later -->
-<div id="successMessage" class="hidden fixed inset-0 min-h-screen bg-gradient-to-br from-purple-500 to-purple-800 flex items-center justify-center p-5 z-50">
-    <div class="bg-white rounded-3xl p-12 max-w-2xl text-center shadow-2xl">
-        <div class="text-7xl mb-6">🎉</div>
-        <h1 class="text-4xl font-bold mb-4 text-gray-800">
-            Payment Successful!
-        </h1>
-        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-            Thank you for registering, <span id="userName" class="font-bold text-purple-600"></span>!
-        </p>
-
-        <!-- What Happens Next -->
-        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-6 text-left border-2 border-purple-200">
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">
-                📋 What Happens Next?
-            </h3>
-            <div class="space-y-4">
-                <div class="flex items-start gap-3">
-                    <span class="text-2xl">✅</span>
-                    <div>
-                        <p class="font-bold text-gray-800">Right Now</p>
-                        <p class="text-gray-600">You'll receive a confirmation email at <span id="userEmail" class="font-mono text-sm"></span></p>
-                    </div>
-                </div>
-                
-                <div class="flex items-start gap-3">
-                    <span class="text-2xl">📱</span>
-                    <div>
-                        <p class="font-bold text-gray-800">Within 24 Hours</p>
-                        <p class="text-gray-600">We'll add you to our exclusive WhatsApp group for updates and resources</p>
-                    </div>
-                </div>
-                
-                <div class="flex items-start gap-3">
-                    <span class="text-2xl">🔗</span>
-                    <div>
-                        <p class="font-bold text-gray-800">24 Hours Before Workshop (Jan 24)</p>
-                        <p class="text-gray-600">You'll receive the Zoom link via email and WhatsApp</p>
-                    </div>
-                </div>
-                
-                <div class="flex items-start gap-3">
-                    <span class="text-2xl">🎯</span>
-                    <div>
-                        <p class="font-bold text-gray-800">Workshop Day (Jan 25, 10 AM)</p>
-                        <p class="text-gray-600">Join the live session and start creating AI-powered training content!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Workshop Details -->
-        <div class="bg-gray-50 rounded-2xl p-6 mb-6 text-left">
-            <h3 class="text-xl font-bold mb-3 text-gray-800">📅 Workshop Details:</h3>
-            <p class="mb-2 text-gray-600"><strong>Date:</strong> Saturday, January 25, 2026</p>
-            <p class="mb-2 text-gray-600"><strong>Time:</strong> 10:00 AM - 12:00 PM IST</p>
-            <p class="text-gray-600"><strong>Mode:</strong> Live Virtual Workshop (Zoom link will be shared)</p>
-        </div>
-
-        <!-- Important Note -->
-        <div class="bg-yellow-50 border-2 border-yellow-400 rounded-xl p-4 mb-6">
-            <p class="text-yellow-800 font-semibold flex items-center gap-2 justify-center">
-                <span>⚠️</span>
-                <span>Please check your email and WhatsApp regularly for updates!</span>
+            <p class="text-center text-gray-500 text-sm">
+                🔒 Secure payment via Razorpay
             </p>
         </div>
-
-        <!-- Action Button -->
-        <button
-            onclick="window.location.href='/'"
-            class="bg-purple-600 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:bg-purple-700 transition-all hover:scale-105"
-        >
-            Back to Home
-        </button>
     </div>
-</div>
-    <script>
-    function validateForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
+</section>
 
-        if (!name || !email || !phone) {
-            alert('Please fill in all required fields (Name, Email, Phone)');
-            return false;
-        }
+<!-- FOOTER -->
+<footer class="bg-white border-t text-center py-8 text-gray-600">
+    © 2026 Big Picture Ideas
+</footer>
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
-            return false;
-        }
+<!-- PAYMENT SCRIPT -->
+<script>
+function redirectToPayment() {
 
-        const phoneRegex = /^[0-9]{10}$/;
-        if (!phoneRegex.test(phone)) {
-            alert('Please enter a valid 10-digit phone number');
-            return false;
-        }
+    const PAYMENT_LINK = "https://rzp.io/rzp/6np0JVls"; // 👈 CHANGE ONLY THIS
 
-        return true;
-    }
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
 
-    function handlePayment() {
-    if (!validateForm()) {
+    if (!name || !email || !phone) {
+        alert("Please fill Name, Email and Phone.");
         return;
     }
 
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Enter a valid email.");
+        return;
+    }
+
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+        alert("Enter a valid 10-digit phone number.");
+        return;
+    }
+
+    // Optional: save locally for reconciliation
+    localStorage.setItem("workshop_registration", JSON.stringify({
+        name, email, phone,
         experience: document.getElementById('experience').value,
         aiTools: document.getElementById('aiTools').value,
-        goals: document.getElementById('goals').value
-    };
+        goals: document.getElementById('goals').value,
+        time: new Date().toISOString()
+    }));
 
-    const options = {
-        key: '{{ razorpay_key }}',
-        amount: 9900, // ₹99 in paise
-        currency: 'INR',
-        name: 'Big Picture Ideas',
-        description: 'AI-Powered Trainer Workshop',
-        handler: function (response) {
-            console.log('Payment successful:', response);
-            
-            // Show success message immediately
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-            
-            // Hide the main content
-            document.querySelector('section').style.display = 'none';
-            document.querySelector('nav').style.display = 'none';
-            
-            // Show success message
-            document.getElementById('successMessage').classList.remove('hidden');
-            
-            // Optional: Save to storage if available
-            try {
-                if (window.storage) {
-                    const registrationData = {
-                        ...formData,
-                        paymentId: response.razorpay_payment_id,
-                        amount: 99,
-                        timestamp: new Date().toISOString()
-                    };
-                    
-                    window.storage.set(
-                        `registration:${response.razorpay_payment_id}`,
-                        JSON.stringify(registrationData)
-                    ).catch(err => console.log('Storage save failed (non-critical):', err));
-                }
-            } catch (error) {
-                console.log('Storage not available (non-critical):', error);
-            }
-            
-            // Optional: Send to your backend
-            sendRegistrationToBackend(formData, response.razorpay_payment_id);
-        },
-        prefill: {
-            name: formData.name,
-            email: formData.email,
-            contact: formData.phone
-        },
-        notes: {
-            experience: formData.experience,
-            ai_tools: formData.aiTools,
-            goals: formData.goals
-        },
-        theme: {
-            color: '#667eea'
-        },
-        modal: {
-            ondismiss: function() {
-                console.log('Payment cancelled by user');
-            }
-        }
-    };
-
-    try {
-        const rzp = new Razorpay(options);
-        
-        rzp.on('payment.failed', function (response) {
-            console.error('Payment failed:', response.error);
-            alert('Payment failed: ' + response.error.description + '\n\nPlease try again or contact support.');
-        });
-        
-        rzp.open();
-    } catch (error) {
-        console.error('Razorpay initialization error:', error);
-        alert('Unable to initialize payment. Please check your internet connection and try again.');
-    }
-}
-
-// Optional: Function to send registration to your backend
-function sendRegistrationToBackend(formData, paymentId) {
-    fetch('/save-registration', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            ...formData,
-            paymentId: paymentId,
-            amount: 99,
-            timestamp: new Date().toISOString()
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Registration saved to backend:', data);
-    })
-    .catch(error => {
-        console.log('Backend save failed (non-critical):', error);
-    });
+    window.location.href = PAYMENT_LINK;
 }
 </script>
-```
+
+</body>
+</html>

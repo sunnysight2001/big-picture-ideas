@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 import json
 from datetime import date, datetime
-import razorpay
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
@@ -10,8 +9,6 @@ from sendgrid.helpers.mail import Mail
 # ENV VARIABLES
 # -----------------------------------
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
-RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")
-RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET")
 
 # ======================================================
 # APP SETUPS
@@ -23,15 +20,7 @@ app.secret_key = 'your-secret-key-change-this-in-production'
 # -----------------------------------
 # RAZORPAY SETUP
 # -----------------------------------
-import razorpay
 
-if RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
-    razorpay_client = razorpay.Client(
-        auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET)
-    )
-else:
-    razorpay_client = None
-    print("⚠️ Razorpay keys not configured")
 
 # ======================================================
 # CONTENT (IDEAS JSON)
@@ -133,13 +122,7 @@ def ideas_redirect():
 
 @app.route('/workshop')
 def workshop():
-    razorpay_key = os.environ.get('RAZORPAY_KEY_ID', 'rzp_test_default')
-    print("=" * 50)
-    print(f"Razorpay Key from env: {razorpay_key}")
-    print(f"Key length: {len(razorpay_key)}")
-    print(f"Starts with rzp_: {razorpay_key.startswith('rzp_')}")
-    print("=" * 50)
-    return render_template('workshop.html', razorpay_key=razorpay_key)
+    return render_template('workshop.html')
 
 @app.route('/learn_ai')
 def learn_ai():

@@ -210,18 +210,143 @@ footer {
 <body>
 
 <!-- HERO -->
-<section class="home-hero">
-  <div class="hero-slides">
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200"
-         class="hero-slide"
-         alt="Resources coming soon">
+<!-- WORKSHOP PROMO BANNER -->
+<!-- VERSION 4: THE "TIME HACK" BANNER -->
+<a href="/workshop" style="text-decoration:none;">
+  <div style="
+    background: linear-gradient(135deg, #059669 0%, #0891b2 50%, #0284c7 100%);
+    color: white;
+    padding: 28px 32px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 20px 50px rgba(5, 150, 105, 0.4);
+    position: relative;
+    overflow: hidden;
+  " onmouseover="this.style.transform='scale(1.01)';" onmouseout="this.style.transform='scale(1)';">
+    
+    <!-- Animated background circles -->
+    <div style="
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    "></div>
+    <div style="
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite reverse;
+    "></div>
+    
+    <div style="position: relative; z-index: 1;">
+      <div style="
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        padding: 8px 16px;
+        border-radius: 25px;
+        margin-bottom: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      ">
+        <span style="font-size: 20px;">⏱️</span>
+        <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.5px;">TIME HACK REVEALED</span>
+      </div>
+      
+      <<div style="margin-bottom: 20px;">
+  <div style="font-size: 18px; font-weight: 600; margin-bottom: 10px; opacity: 0.95;">
+    What if I told you that...
   </div>
 
-  <div class="home-hero-content">
-    <h1 class="hero-title">Free Resources</h1>
-    <p class="hero-subtitle">Frameworks, prompts, and tools — coming soon</p>
+  <div style="font-size: 30px; font-weight: 900; line-height: 1.35;">
+    <p style="margin: 0 0 8px 0;">
+      Your 3-Day Training Project
+    </p>
+
+    <p style="margin: 0;">
+      Can Be Done in 
+      <span style="
+        background: #fde047;
+        color: #065f46;
+        padding: 6px 14px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(253, 224, 71, 0.4);
+        display: inline-block;
+      ">
+        2 Hours
+      </span>
+    </p>
   </div>
-</section>
+</div>
+
+        <div style="font-size: 17px; opacity: 0.95; font-weight: 600;">
+          And you'll learn exactly how on <strong>Feb 7th</strong>
+        </div>
+      </div>
+      
+      <div style="
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+      ">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div>
+            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">Old Way:</div>
+            <div style="font-size: 16px; font-weight: 700; text-decoration: line-through; opacity: 0.7;">3 days + stress</div>
+          </div>
+          <div>
+            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">New Way:</div>
+            <div style="font-size: 16px; font-weight: 700; color: #fde047;">2 hours + coffee</div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">
+            🔥 Live Workshop • Feb 7th • 10 AM
+          </div>
+          <div style="font-size: 14px; opacity: 0.9;">
+            Build: Video Script + Presentation • Just ₹99 • 13 seats left
+          </div>
+        </div>
+        <div style="
+          background: #fde047;
+          color: #065f46;
+          padding: 14px 28px;
+          border-radius: 12px;
+          font-size: 17px;
+          font-weight: 900;
+          box-shadow: 0 8px 25px rgba(253, 224, 71, 0.4);
+          transition: all 0.2s ease;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+        " onmouseover="this.style.transform='scale(1.08) rotate(-1deg)';" onmouseout="this.style.transform='scale(1) rotate(0deg)';">
+          Learn This Hack →
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+}
+</style>
+<!-- END: LIVE WORKSHOP BANNER -->
 
 <!-- Navigation -->
 <nav>
