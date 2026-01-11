@@ -5,11 +5,6 @@ from datetime import date, datetime
 import razorpay
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except Exception:
-    pass
 
 # -----------------------------------
 # ENV VARIABLES
@@ -19,7 +14,7 @@ RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")
 RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET")
 
 # ======================================================
-# APP SETUP
+# APP SETUPS
 # ======================================================
 
 app = Flask(__name__)
