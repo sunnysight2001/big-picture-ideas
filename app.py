@@ -298,6 +298,9 @@ def share_idea(idea_id):
 @app.route('/download')
 def download():
     return render_template('download.html')
+@app.route('/download-sales-playbook')
+def download_sales_playbook():
+    return render_template('download_sales.html')
 
 # ======================================================
 # LOCAL RUN
