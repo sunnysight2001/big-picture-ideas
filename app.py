@@ -242,6 +242,7 @@ def match_problem():
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
     email = request.form.get('email', '').strip().lower()
+    resource = request.form.get('resource', 'sales_playbook')
 
     if not email or '@' not in email:
         flash('Please enter a valid email address.', 'error')
@@ -257,29 +258,16 @@ def subscribe():
     with open(csv_path, 'r', encoding='utf-8') as f:
         existing_emails = {line.split(',')[0] for line in f.readlines()[1:]}
 
-    if email in existing_emails:
-        flash(
-            "You're already subscribed 😊 "
-            "If you don't see our emails, check your Spam folder.",
-            'info'
-        )
-        return redirect(url_for('index'))
+    if email not in existing_emails:
+        with open(csv_path, 'a', encoding='utf-8') as f:
+            f.write(f"{email},{datetime.now().isoformat()}\n")
+        send_welcome_email(email)
+        flash("Thanks for subscribing! 🎉", 'success')
+    else:
+        flash("You're already subscribed 😊", 'info')
 
-    with open(csv_path, 'a', encoding='utf-8') as f:
-        f.write(f"{email},{datetime.now().isoformat()}\n")
-
-    # ✅ THESE MUST BE INSIDE THE FUNCTION
-    send_welcome_email(email)
-
-    flash(
-        "Thanks for subscribing! 🎉 "
-        "We've sent you a welcome email. "
-        "Check your Spam folder if you don't see it.",
-        'success'
-    )
-
-    next_page = request.form.get('next')
-    return redirect(next_page or url_for('index'))
+    # 🔑 ONE redirect for BOTH cases
+    return redirect(f'/download/{resource}')
 
 # ======================================================
 # SHARE API (optional - just for tracking if you want analytics later)
@@ -295,12 +283,31 @@ def share_idea(idea_id):
 # doawnload route
 # ======================================================
 
-@app.route('/download')
-def download():
-    return render_template('download.html')
-@app.route('/download-sales-playbook')
-def download_sales_playbook():
-    return render_template('download_sales.html')
+@app.route('/download/<resource>')
+def download_resource(resource):
+
+    resources = {
+        "ai_play": {
+            "title": "AI Playbook",
+            "file_path": "/static/resources/AI_Playbook.pdf",
+            "file_name": "AI_Playbook.pdf"
+        },
+        "sales_playbook": {
+            "title": "Sales Playbook",
+            "file_path": "/static/resources/Modern_Sales_Thinking_India.pdf",
+            "file_name": "Sales_Playbook.pdf"
+        }
+    }
+
+    if resource not in resources:
+        return "Resource not found", 404
+
+    return render_template(
+        "download.html",
+        title=resources[resource]["title"],
+        file_path=resources[resource]["file_path"],
+        file_name=resources[resource]["file_name"]
+    )
 
 # ======================================================
 # LOCAL RUN

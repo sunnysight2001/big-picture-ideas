@@ -12,8 +12,8 @@
   <p>Your free resource is ready.</p>
 
   <a
-    href="/static/resources/L&D - Prompt Playbook.pdf"
-    download
+    href="{{ file_path }}"
+    download="{{ file_name }}"
     style="
       display:inline-block;
       margin-top:24px;
@@ -25,11 +25,11 @@
       font-weight:600;
     "
   >
-    Download Free PDF
+    Download {{ title }}
   </a>
 
   <p style="margin-top:32px;">
-    <a href="/learn_ai">Explore Learn AI →</a>
+    <a href="/Home">Explore All Mental Models →</a>
   </p>
 
 </body>
