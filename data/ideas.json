@@ -950,5 +950,104 @@
     "consultative-selling",
     "needs-analysis"
   ]
+},
+{
+  "id": "commercial-teaching",
+  "title": "Commercial Teaching",
+  "subtitle": "Reframe how the customer thinks about their business",
+  "opening": "Customers don’t need more information. They need a new way of seeing the problem. Commercial teaching challenges existing beliefs and introduces insight-led tension.",
+  "essence": "Teach something unexpected that reframes the customer’s priorities and exposes a hidden cost or missed opportunity.",
+  "visual_image": "commercial-teaching.png",
+  "visual_caption": "Insight creates constructive tension that opens the door to change.",
+  "explanation": "Commercial teaching is about leading with insight, not products. The salesperson introduces a non-obvious problem or opportunity the customer hadn’t fully recognized, backed by data, patterns, or industry trends. This shifts the conversation from price to value.",
+  "steps": [
+    {
+      "title": "Identify a Hidden Problem",
+      "description": "Find a cost, risk, or opportunity the customer underestimates."
+    },
+    {
+      "title": "Reframe the Situation",
+      "description": "Challenge the customer’s current way of thinking."
+    },
+    {
+      "title": "Quantify the Impact",
+      "description": "Show business consequences using numbers or scenarios."
+    },
+    {
+      "title": "Connect to Your Solution",
+      "description": "Position your offering as a natural response to the insight."
+    }
+  ],
+  "example": "A sales manager believes discounts drive volume. The Challenger reframes: frequent discounting is training customers to delay purchases, eroding long-term margins. The conversation shifts from price to profit discipline.",
+  "when_to_apply": [
+    "Customers are comfortable with the status quo",
+    "Price pressure dominates conversations",
+    "You sell complex or differentiated solutions"
+  ],
+  "when_not_to_apply": [
+    "Transactional or commodity sales",
+    "Customer already deeply educated",
+    "No credible insight available"
+  ],
+  "practice": "List one belief your customers strongly hold. Design an insight that respectfully challenges it.",
+  "video": "",
+  "category": [
+    "sales",
+    "challenger"
+  ],
+  "tags": [
+    "commercial-teaching",
+    "insight-selling",
+    "challenger-sale"
+  ]
+},
+{
+  "id": "rational-drowning",
+  "title": "Rational Drowning Avoidance",
+  "subtitle": "Don’t overwhelm—direct",
+  "opening": "More data doesn’t mean more clarity. Customers drown in options when sellers over-explain.",
+  "essence": "Guide decisions by narrowing choices, not expanding them.",
+  "visual_image": "rational-drowning.png",
+  "visual_caption": "Clarity beats completeness.",
+  "explanation": "Challenger sellers resist the urge to educate exhaustively. Instead, they curate information, highlight trade-offs, and lead customers toward a clear decision path.",
+  "steps": [
+    {
+      "title": "Filter Information",
+      "description": "Share only what moves the decision."
+    },
+    {
+      "title": "Highlight Trade-offs",
+      "description": "Explain what is gained and lost."
+    },
+    {
+      "title": "Recommend a Direction",
+      "description": "Take a confident point of view."
+    },
+    {
+      "title": "Simplify Next Steps",
+      "description": "Make action easy."
+    }
+  ],
+  "example": "Instead of presenting five package options, the Challenger recommends two—and explains why one fits best.",
+  "when_to_apply": [
+    "Customers feel overwhelmed",
+    "Long sales cycles",
+    "High-complexity offerings"
+  ],
+  "when_not_to_apply": [
+    "Highly technical evaluation phases",
+    "Procurement-led comparisons",
+    "Customers explicitly asking for full detail"
+  ],
+  "practice": "Reduce one sales deck by 30% without losing the core message.",
+  "video": "",
+  "category": [
+    "sales",
+    "decision-making"
+  ],
+  "tags": [
+    "clarity",
+    "simplicity"
+  ]
 }
 ]
