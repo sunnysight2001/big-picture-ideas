@@ -294,7 +294,7 @@ def download_resource(resource):
         },
         "sales_playbook": {
             "title": "Sales Playbook",
-            "file_path": "/static/resources/Modern_Sales_Thinking_India.pdf",
+            "file_path": "/static/resources/Sales_Playbook.pdf",
             "file_name": "Sales_Playbook.pdf"
         }
     }
