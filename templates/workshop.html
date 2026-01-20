@@ -14,7 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Workshop | Big Picture Ideas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -499,7 +505,7 @@
                 <textarea id="goals" rows="3" class="w-full mt-1 px-4 py-4 border-2 rounded-xl"></textarea>
             </div>
 
-            <button onclick="initiatePayment()"
+            <button onclick="proceedToPayment()"
                 class="w-full bg-orange-500 hover:bg-orange-600 text-white py-5 text-xl font-bold rounded-xl transition">
                 Pay ₹99 & Secure Your Spot 🚀
             </button>
@@ -513,105 +519,78 @@
 
 <!-- FOOTER -->
 <footer class="bg-white border-t text-center py-8 text-gray-600">
-    © 2026 Big Picture Ideas
+    © 2026 Big Picture Ideas | After payment, you'll receive workshop details via email
 </footer>
 
-<!-- PAYMENT SCRIPT -->
+<!-- SIMPLE PAYMENT LINK SCRIPT -->
 <script>
-function initiatePayment() {
+function proceedToPayment() {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
 
     // Validation
     if (!name || !email || !phone) {
-        alert("Please fill Name, Email and Phone.");
+        alert("⚠️ Please fill in Name, Email and Phone to continue.");
         return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert("Enter a valid email.");
+        alert("⚠️ Please enter a valid email address.");
         return;
     }
 
     const phoneRegex = /^[0-9]{10}$/;
     if (!phoneRegex.test(phone)) {
-        alert("Enter a valid 10-digit phone number.");
+        alert("⚠️ Please enter a valid 10-digit phone number.");
         return;
     }
 
-    // METHOD 1: Using Payment Link (Simplest - Current Working Method)
-    // This redirects to your existing payment button page
-    const PAYMENT_LINK = "https://rzp.io/rzp/6np0JVls";
-    
-    // Save form data temporarily
-    const tempData = {
+    // Save data temporarily
+    const registrationData = {
         name: name,
         email: email,
         phone: phone,
         experience: document.getElementById('experience').value,
         aiTools: document.getElementById('aiTools').value,
         goals: document.getElementById('goals').value,
-        status: 'PENDING',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        status: 'PENDING'
     };
     
-    localStorage.setItem("workshop_pending", JSON.stringify(tempData));
+    localStorage.setItem("workshop_pending_registration", JSON.stringify(registrationData));
+
+    // Show message
+    alert("✅ Details saved!\n\nYou will now be redirected to Razorpay to complete your payment.\n\nAfter payment, check your email for workshop details.");
+
+    // YOUR RAZORPAY PAYMENT LINK
+    const PAYMENT_LINK = "https://rzp.io/rzp/r6ZsDOVc";
     
     // Redirect with pre-filled data
     const paymentUrl = `${PAYMENT_LINK}?prefill[name]=${encodeURIComponent(name)}&prefill[email]=${encodeURIComponent(email)}&prefill[contact]=${phone}`;
+    
     window.location.href = paymentUrl;
-    
-    /* 
-    METHOD 2: Using Razorpay Checkout (Requires API Key)
-    Uncomment this section if you want in-page payment modal
-    You'll need your Razorpay Key ID from: Dashboard > Settings > API Keys
-    
-    const options = {
-        "key": "rzp_live_S61t7MubyqSvYC", // Get from Razorpay Dashboard > Settings > API Keys
-        "amount": "9900", // ₹99 = 9900 paise
-        "currency": "INR",
-        "name": "Big Picture Ideas",
-        "description": "AI Workshop - Feb 7, 2026",
-        "image": "https://yourdomain.com/logo.png",
-        "prefill": {
-            "name": name,
-            "email": email,
-            "contact": phone
-        },
-        "theme": {
-            "color": "#a855f7"
-        },
-        "handler": function (response) {
-            // Payment successful
-            const paymentData = {
-                payment_id: response.razorpay_payment_id,
-                name: name,
-                email: email,
-                phone: phone,
-                experience: document.getElementById('experience').value,
-                aiTools: document.getElementById('aiTools').value,
-                goals: document.getElementById('goals').value,
-                payment_status: 'SUCCESS',
-                timestamp: new Date().toISOString()
-            };
-            
-            localStorage.setItem("workshop_registration", JSON.stringify(paymentData));
-            alert("🎉 Payment Successful! Check your email for workshop details.");
-            window.location.reload();
-        },
-        "modal": {
-            "ondismiss": function() {
-                alert("⚠️ Payment cancelled. Please complete payment to register.");
-            }
-        }
-    };
-    
-    const rzp = new Razorpay(options);
-    rzp.open();
-    */
 }
+
+// Check if returning from payment (if you setup callback URL in Razorpay)
+window.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentStatus = urlParams.get('payment_status');
+    
+    if (paymentStatus === 'success') {
+        const pendingData = localStorage.getItem("workshop_pending_registration");
+        if (pendingData) {
+            const data = JSON.parse(pendingData);
+            data.status = 'COMPLETED';
+            data.payment_completed_at = new Date().toISOString();
+            localStorage.setItem("workshop_confirmed_registration", JSON.stringify(data));
+            localStorage.removeItem("workshop_pending_registration");
+            
+            alert("🎉 Payment Successful!\n\nYou're registered for the AI Workshop on Feb 7, 2026.\n\nCheck your email for workshop joining link and details.");
+        }
+    }
+});
 </script>
 
 </body>
