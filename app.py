@@ -120,9 +120,6 @@ def ideas_redirect():
     ideas = load_ideas()
     return render_template('all_ideas.html', ideas=ideas)
 
-@app.route('/workshop')
-def workshop():
-    return render_template('workshop.html')
 
 @app.route('/learn_ai')
 def learn_ai():
