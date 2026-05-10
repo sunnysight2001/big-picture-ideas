@@ -12,6 +12,112 @@
 
     <!-- Reuse same CSS as All Ideas -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+    <style>
+        .pdf-section {
+            margin: 60px 0 40px;
+        }
+
+        .pdf-section-header {
+            margin-bottom: 12px;
+        }
+
+        .pdf-section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 8px;
+        }
+
+        .pdf-section-header p {
+            color: #636e72;
+            font-size: 1rem;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .pdf-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pdf-card:hover {
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .pdf-icon {
+            width: 44px;
+            height: 44px;
+            background: #fff0f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .pdf-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .pdf-card p {
+            font-size: 0.92rem;
+            color: #636e72;
+            line-height: 1.6;
+            margin: 0;
+            flex: 1;
+        }
+
+        .pdf-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            padding: 10px 20px;
+            background: #0984e3;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: background 0.2s ease;
+            width: fit-content;
+        }
+
+        .pdf-download-btn:hover {
+            background: #0770c4;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 48px 0 0;
+        }
+
+        @media (max-width: 600px) {
+            .pdf-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -54,7 +160,6 @@
     <!-- AI Tiles Grid -->
     <section class="section">
         <div class="grid">
-
             {% for item in ai_items %}
             <a href="{{ url_for('learn_ai_detail', slug=item.slug) }}" class="card">
                 <h3>{{ item.title }}</h3>
@@ -73,6 +178,68 @@
                 </div>
             </a>
             {% endfor %}
+        </div>
+    </section>
+
+    <!-- PDF DOWNLOADS SECTION -->
+    <hr class="section-divider">
+
+    <section class="pdf-section">
+        <div class="pdf-section-header">
+            <h2>📥 AI Response Guides</h2>
+            <p>
+                We tested the same prompts across leading AI tools — ChatGPT, Claude, and Gemini.
+                Download these guides to compare responses, understand each tool's strengths,
+                and decide which AI works best for your workflow.
+            </p>
+        </div>
+
+        <div class="pdf-grid">
+
+            <!-- ChatGPT -->
+            <div class="pdf-card">
+                <div class="pdf-icon">🤖</div>
+                <h3>ChatGPT – Response Guide</h3>
+                <p>
+                    See how ChatGPT handles real prompts across writing, analysis, and problem-solving.
+                    A quick reference for everyday AI use.
+                </p>
+                <a href="{{ url_for('static', filename='resources/ChatGPT - Response.pdf') }}"
+                   download
+                   class="pdf-download-btn">
+                    ↓ Download PDF
+                </a>
+            </div>
+
+            <!-- Claude -->
+            <div class="pdf-card">
+                <div class="pdf-icon">✦</div>
+                <h3>Claude – Coaching Facilitator Guide</h3>
+                <p>
+                    Claude's detailed responses to coaching and facilitation prompts.
+                    Ideal for L&D professionals and managers exploring AI-assisted coaching.
+                </p>
+                <a href="{{ url_for('static', filename='resources/Claud - coaching_facilitator_guide_v2.pdf') }}"
+                   download
+                   class="pdf-download-btn">
+                    ↓ Download PDF
+                </a>
+            </div>
+
+            <!-- Gemini -->
+            <div class="pdf-card">
+                <div class="pdf-icon">💎</div>
+                <h3>Gemini – Response Guide</h3>
+                <p>
+                    Google Gemini's responses to the same prompts. Compare reasoning style,
+                    depth, and output quality against other leading AI tools.
+                </p>
+                <a href="{{ url_for('static', filename='resources/Gemini - Response.pdf') }}"
+                   download
+                   class="pdf-download-btn">
+                    ↓ Download PDF
+                </a>
+            </div>
 
         </div>
     </section>
