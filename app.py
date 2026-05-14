@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_file, jsonify
 import os
 import json
 from datetime import date, datetime
@@ -11,16 +11,11 @@ from sendgrid.helpers.mail import Mail
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
 
 # ======================================================
-# APP SETUPS
+# APP SETUP
 # ======================================================
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-this-in-production'
-
-# -----------------------------------
-# RAZORPAY SETUP
-# -----------------------------------
-
 
 # ======================================================
 # CONTENT (IDEAS JSON)
@@ -52,7 +47,7 @@ def get_ai_hack_by_slug(slug):
     return None
 
 def get_next_ai_hack(slug):
-    hacks = load_ai_hacks()  # listing file
+    hacks = load_ai_hacks()
     idx = next((i for i, x in enumerate(hacks) if x.get('slug') == slug), None)
     if idx is not None and len(hacks) > 1:
         return hacks[(idx + 1) % len(hacks)]
@@ -95,7 +90,6 @@ def send_welcome_email(to_email: str) -> None:
 
         sg = SendGridAPIClient(api_key)
         sg.send(message)
-
         print(f"Welcome email sent via SendGrid to {to_email}")
 
     except Exception as e:
@@ -105,6 +99,7 @@ def send_welcome_email(to_email: str) -> None:
 # ======================================================
 # ROUTES
 # ======================================================
+
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -113,13 +108,11 @@ def about():
 def all_ideas():
     ideas = load_ideas()
     return render_template('all_ideas.html', ideas=ideas)
-    
 
 @app.route('/ideas')
 def ideas_redirect():
     ideas = load_ideas()
     return render_template('all_ideas.html', ideas=ideas)
-
 
 @app.route('/learn_ai')
 def learn_ai():
@@ -156,11 +149,9 @@ def index():
     for idea in ideas:
         themes.update(idea.get('category', []))
 
-    # Today's idea - rotates daily
     today = date.today()
     todays_idea = ideas[today.timetuple().tm_yday % len(ideas)] if ideas else None
 
-    # Latest ideas - last 3 added to JSON, shown newest first
     latest_ideas = ideas[-3:] if len(ideas) >= 3 else ideas
     latest_ideas.reverse()
 
@@ -177,7 +168,6 @@ def idea_detail(idea_id):
     if not idea:
         return "Idea not found", 404
 
-    # Get next idea
     ideas = load_ideas()
     idx = next((i for i, x in enumerate(ideas) if x['id'] == idea_id), None)
     next_idea = ideas[(idx + 1) % len(ideas)] if idx is not None else None
@@ -245,39 +235,40 @@ def subscribe():
         flash('Please enter a valid email address.', 'error')
         return redirect(url_for('index'))
 
-    os.makedirs('data', exist_ok=True)
-    csv_path = os.path.join('data', 'subscribers.csv')
+    # Try to save subscriber — gracefully skip if filesystem is read-only (e.g. Render)
+    try:
+        os.makedirs('data', exist_ok=True)
+        csv_path = os.path.join('data', 'subscribers.csv')
 
-    if not os.path.exists(csv_path):
-        with open(csv_path, 'w', encoding='utf-8') as f:
-            f.write('email,subscribed_at\n')
+        if not os.path.exists(csv_path):
+            with open(csv_path, 'w', encoding='utf-8') as f:
+                f.write('email,subscribed_at\n')
 
-    with open(csv_path, 'r', encoding='utf-8') as f:
-        existing_emails = {line.split(',')[0] for line in f.readlines()[1:]}
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            existing_emails = {line.split(',')[0] for line in f.readlines()[1:]}
 
-    if email not in existing_emails:
-        with open(csv_path, 'a', encoding='utf-8') as f:
-            f.write(f"{email},{datetime.now().isoformat()}\n")
-        send_welcome_email(email)
-        flash("Thanks for subscribing! 🎉", 'success')
-    else:
-        flash("You're already subscribed 😊", 'info')
+        if email not in existing_emails:
+            with open(csv_path, 'a', encoding='utf-8') as f:
+                f.write(f"{email},{datetime.now().isoformat()}\n")
 
-    # 🔑 ONE redirect for BOTH cases
+    except Exception as e:
+        print(f"Could not save subscriber to CSV (filesystem may be read-only): {e}")
+
+    # Always send welcome email and redirect regardless of CSV result
+    send_welcome_email(email)
+    flash("Thanks! Your download is ready 🎉", 'success')
     return redirect(f'/download/{resource}')
 
 # ======================================================
-# SHARE API (optional - just for tracking if you want analytics later)
+# SHARE API
 # ======================================================
 
 @app.route('/api/share/<idea_id>', methods=['POST'])
 def share_idea(idea_id):
-    # Just acknowledge the share
-    from flask import jsonify
     return jsonify({'success': True})
 
 # ======================================================
-# doawnload route
+# DOWNLOAD ROUTE
 # ======================================================
 
 @app.route('/download/<resource>')
@@ -286,20 +277,18 @@ def download_resource(resource):
     resources = {
         "ai_play": {
             "title": "AI Playbook",
-            "file_path": "/static/resources/AI_Playbook.pdf",
+            "file_path": "static/resources/AI_Playbook.pdf",
             "file_name": "AI_Playbook.pdf"
         },
-
         "sales_playbook": {
             "title": "Sales Playbook",
-            "file_path": "/static/resources/Sales_Playbook.pdf",
+            "file_path": "static/resources/Sales_Playbook.pdf",
             "file_name": "Sales_Playbook.pdf"
         },
-
         "llm_context_window": {
             "title": "Why AI Suddenly Stops Understanding You",
-            "file_path": "/static/resources/llm_context_window.html",
-            "file_name": "llm_context_window.html"
+            "file_path": "static/resources/llm_context_window.html",
+            "file_name": "LLM_Context_Window_Guide.html"
         }
     }
 
@@ -308,8 +297,13 @@ def download_resource(resource):
     if not resource_data:
         return "Resource not found", 404
 
+    file_path = os.path.join(os.getcwd(), resource_data["file_path"])
+
+    if not os.path.exists(file_path):
+        return f"File not found: {resource_data['file_name']}", 404
+
     return send_file(
-        "." + resource_data["file_path"],
+        file_path,
         as_attachment=True,
         download_name=resource_data["file_name"]
     )
