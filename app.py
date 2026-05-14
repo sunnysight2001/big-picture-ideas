@@ -289,21 +289,29 @@ def download_resource(resource):
             "file_path": "/static/resources/AI_Playbook.pdf",
             "file_name": "AI_Playbook.pdf"
         },
+
         "sales_playbook": {
             "title": "Sales Playbook",
             "file_path": "/static/resources/Sales_Playbook.pdf",
             "file_name": "Sales_Playbook.pdf"
+        },
+
+        "llm_context_window": {
+            "title": "Why AI Suddenly Stops Understanding You",
+            "file_path": "/static/resources/llm_context_window.html",
+            "file_name": "llm_context_window.html"
         }
     }
 
-    if resource not in resources:
+    resource_data = resources.get(resource)
+
+    if not resource_data:
         return "Resource not found", 404
 
-    return render_template(
-        "download.html",
-        title=resources[resource]["title"],
-        file_path=resources[resource]["file_path"],
-        file_name=resources[resource]["file_name"]
+    return send_file(
+        "." + resource_data["file_path"],
+        as_attachment=True,
+        download_name=resource_data["file_name"]
     )
 
 # ======================================================
