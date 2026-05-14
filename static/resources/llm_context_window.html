@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Day Rahul's AI Forgot Everything</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #020617;
+      color: #e2e8f0;
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #1e3a8a, #020617 60%);
+    }
+
+    .chapter {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .chapter-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .chapter-sub {
+      color: #93c5fd;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 2;
+      margin-bottom: 28px;
+      color: #cbd5e1;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 30px;
+      margin: 35px 0;
+      backdrop-filter: blur(12px);
+    }
+
+    .reflection {
+      background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(99,102,241,0.12));
+      border: 1px solid rgba(96,165,250,0.3);
+      border-radius: 24px;
+      padding: 28px;
+      margin-top: 50px;
+    }
+
+    .reflection h4 {
+      color: #7dd3fc;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .quote {
+      border-left: 4px solid #38bdf8;
+      padding-left: 24px;
+      margin: 30px 0;
+      font-size: 1.5rem;
+      color: #f8fafc;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 8px;
+      border-radius: 6px;
+      color: #93c5fd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    th, td {
+      padding: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: left;
+    }
+
+    th {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero-title {
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 0;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .toc a:hover {
+      color: #38bdf8;
+      transform: translateX(8px);
+    }
+
+    .next-chapter {
+      margin-top: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(14,165,233,0.25);
+    }
+
+    .next-chapter:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(99,102,241,0.35);
+    }
+
+    .next-chapter span {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero min-h-screen flex items-center px-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-sky-400 tracking-[5px] uppercase mb-6 font-semibold">
+        Story-Based AI Learning Experience
+      </div>
+
+      <h1 class="hero-title mb-10">
+        The Day Rahul's AI <br>
+        <span class="gradient">Forgot Everything</span>
+      </h1>
+
+      <p class="text-2xl text-slate-300 max-w-4xl leading-relaxed mb-14">
+        A cinematic journey into Context Windows, Tokens, Prompt Engineering, RAG, Chunking, and the hidden science behind how Large Language Models actually work.
+      </p>
+
+      <div class="card max-w-3xl toc">
+        <h3 class="text-2xl font-bold mb-6">Chapters</h3>
+        <a href="#chapter1">01 — The Frustration</a>
+        <a href="#chapter2">02 — Enter the Smart AI</a>
+        <a href="#chapter3">03 — What is Context Window?</a>
+        <a href="#chapter4">04 — The Mystery of Tokens</a>
+        <a href="#chapter5">05 — Invisible Token Drain</a>
+        <a href="#chapter6">06 — Why Long Chats Become Slow</a>
+        <a href="#chapter7">07 — Prompt Compression</a>
+        <a href="#chapter8">08 — Chunking</a>
+        <a href="#chapter9">09 — RAG Explained</a>
+        <a href="#chapter10">10 — The Enemy Called Repetition</a>
+        <a href="#chapter11">11 — Summarization</a>
+        <a href="#chapter12">12 — Formatting Costs</a>
+        <a href="#chapter13">13 — The Golden Rule</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 1 -->
+  <section id="chapter1" class="chapter">
+    <div class="chapter-sub">Chapter 1</div>
+    <h2 class="chapter-title">The Frustration</h2>
+
+    <div class="content">
+      <p>Rahul stared at his screen in disbelief.</p>
+
+      <p>Two hours ago, the AI assistant felt magical. It generated workshop ideas, summarized reports, built marketing frameworks, and even helped create training scripts for pharma teams.</p>
+
+      <p>But suddenly, the AI started forgetting things.</p>
+
+      <div class="quote">
+        “Can you provide more context?”
+      </div>
+
+      <p>Rahul became irritated.</p>
+
+      <p>“I already explained all this!”</p>
+
+      <p>He pasted the same instructions again. The responses became slower. More robotic. Less accurate.</p>
+
+      <div class="card">
+        <p class="text-2xl font-semibold">Finally the screen flashed:</p>
+        <p class="text-3xl mt-4 text-red-400 font-bold">Maximum Context Length Exceeded</p>
+      </div>
+
+      <p>Rahul had encountered the invisible limit of AI systems — tokens and context windows.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Have you ever repeated the same instructions to AI multiple times because it forgot earlier details? That is often not an intelligence issue — it is a context management issue.</p>
+    </div>
+  <a href="#chapter2" class="next-chapter" onclick="showChapter(event, 'chapter2')">
+      Move to Next Chapter <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 2 -->
+  <section id="chapter2" class="chapter hidden">
+    <div class="chapter-sub">Chapter 2</div>
+    <h2 class="chapter-title">Enter the Smart AI</h2>
+
+    <div class="content">
+      <p>The room glowed blue.</p>
+
+      <p>A holographic AI assistant appeared beside Rahul’s laptop.</p>
+
+      <div class="quote">
+        “You are not facing an AI problem. You are facing a Context Window problem.”
+      </div>
+
+      <p>The assistant introduced itself as <strong>Contexto</strong> — the guardian of AI memory.</p>
+
+      <p>Contexto explained that every LLM has limited working memory. It can only process a finite amount of information at one time.</p>
+
+      <div class="card">
+        <p class="text-2xl font-semibold mb-4">Think of it like RAM in a computer.</p>
+        <p class="text-xl text-slate-300">The more applications you open, the slower the system becomes.</p>
+      </div>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Most people treat AI like an infinite brain. In reality, it behaves more like a very intelligent person with limited short-term memory.</p>
+    </div>
+  <a href="#chapter3" class="next-chapter" onclick="showChapter(event, 'chapter3')">
+      Continue the Journey <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 3 -->
+  <section id="chapter3" class="chapter hidden">
+    <div class="chapter-sub">Chapter 3</div>
+    <h2 class="chapter-title">What is a Context Window?</h2>
+
+    <div class="content">
+      <p>Contexto opened a floating whiteboard.</p>
+
+      <div class="card text-center text-2xl font-semibold">
+        Prompt + History + Instructions + Documents + Responses = Context Window
+      </div>
+
+      <p>The context window is the temporary working memory of the AI.</p>
+
+      <table>
+        <tr>
+          <th>Model Type</th>
+          <th>Approx Memory Capacity</th>
+        </tr>
+        <tr>
+          <td>8K Context</td>
+          <td>Short conversations</td>
+        </tr>
+        <tr>
+          <td>32K Context</td>
+          <td>Medium documents</td>
+        </tr>
+        <tr>
+          <td>128K Context</td>
+          <td>Hundreds of pages</td>
+        </tr>
+      </table>
+
+      <p>Once the limit is reached, older information starts disappearing.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>When building AI systems, the question is not “How much information do I have?” but “How much information does the AI truly need right now?”</p>
+    </div>
+  <a href="#chapter4" class="next-chapter" onclick="showChapter(event, 'chapter4')">
+      Discover Tokens <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 4 -->
+  <section id="chapter4" class="chapter hidden">
+    <div class="chapter-sub">Chapter 4</div>
+    <h2 class="chapter-title">The Mystery of Tokens</h2>
+
+    <div class="content">
+      <p>Words exploded into glowing cubes around Rahul.</p>
+
+      <p>Contexto explained that AI does not see text like humans do.</p>
+
+      <p>Instead, it breaks everything into smaller units called <strong>tokens</strong>.</p>
+
+      <table>
+        <tr>
+          <th>Text</th>
+          <th>Approx Tokens</th>
+        </tr>
+        <tr>
+          <td>Hello</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Artificial Intelligence</td>
+          <td>2–3</td>
+        </tr>
+        <tr>
+          <td>How are you today?</td>
+          <td>5–6</td>
+        </tr>
+      </table>
+
+      <div class="card">
+        <p class="text-3xl font-bold text-sky-300">100 words ≈ 130 tokens</p>
+      </div>
+
+      <p>Every prompt, response, document, and chat history consumes tokens.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Every unnecessary sentence you send to AI has a computational cost. Efficient prompting is both a technical and strategic skill.</p>
+    </div>
+  <a href="#chapter5" class="next-chapter" onclick="showChapter(event, 'chapter5')">
+      Explore Hidden Token Drain <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 5 -->
+  <section id="chapter5" class="chapter hidden">
+    <div class="chapter-sub">Chapter 5</div>
+    <h2 class="chapter-title">The Invisible Token Drain</h2>
+
+    <div class="content">
+      <p>Contexto opened Rahul’s previous AI session.</p>
+
+      <table>
+        <tr>
+          <th>Activity</th>
+          <th>Tokens</th>
+        </tr>
+        <tr>
+          <td>Prompt</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>PDF Upload</td>
+          <td>10,000</td>
+        </tr>
+        <tr>
+          <td>Chat History</td>
+          <td>8,000</td>
+        </tr>
+        <tr>
+          <td>Repeated Instructions</td>
+          <td>4,000</td>
+        </tr>
+      </table>
+
+      <p>Rahul realized the biggest problem was not AI performance — it was hidden accumulation.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Most AI inefficiency happens silently in the background through repeated prompts, large uploads, and unnecessary conversation history.</p>
+    </div>
+  <a href="#chapter6" class="next-chapter" onclick="showChapter(event, 'chapter6')">
+      Why Does AI Slow Down? <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 6 -->
+  <section id="chapter6" class="chapter hidden">
+    <div class="chapter-sub">Chapter 6</div>
+    <h2 class="chapter-title">Why Long Chats Become Slow</h2>
+
+    <div class="content">
+      <p>As conversations grow longer, the AI processes larger relationships between messages.</p>
+
+      <div class="card">
+        <ul class="space-y-4 text-xl">
+          <li>• More tokens processed</li>
+          <li>• More memory usage</li>
+          <li>• Higher computational effort</li>
+          <li>• Slower responses</li>
+        </ul>
+      </div>
+
+      <p>Rahul finally understood why large AI conversations feel heavy after a while.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>AI speed is not only about internet or servers. It is deeply connected to how much context the model must repeatedly process.</p>
+    </div>
+  <a href="#chapter7" class="next-chapter" onclick="showChapter(event, 'chapter7')">
+      Learn Prompt Compression <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 7 -->
+  <section id="chapter7" class="chapter hidden">
+    <div class="chapter-sub">Chapter 7</div>
+    <h2 class="chapter-title">Prompt Compression</h2>
+
+    <div class="content">
+      <p>Rahul’s prompts were overly dramatic and unnecessarily long.</p>
+
+      <div class="card">
+        <p class="text-red-300 mb-6"><strong>Bad Prompt:</strong></p>
+        <p>“You are an extremely experienced world-class strategic expert consultant...”</p>
+      </div>
+
+      <div class="card">
+        <p class="text-emerald-300 mb-6"><strong>Better Prompt:</strong></p>
+        <p><code>Act as a senior pharma marketing consultant.</code></p>
+      </div>
+
+      <p>Same meaning. Far fewer tokens.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Good prompts are not about sounding impressive. They are about clarity, structure, and efficiency.</p>
+    </div>
+  <a href="#chapter8" class="next-chapter" onclick="showChapter(event, 'chapter8')">
+      Unlock Chunking <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 8 -->
+  <section id="chapter8" class="chapter hidden">
+    <div class="chapter-sub">Chapter 8</div>
+    <h2 class="chapter-title">The Power of Chunking</h2>
+
+    <div class="content">
+      <p>Rahul uploaded a 200-page document into the AI.</p>
+
+      <p>The system slowed immediately.</p>
+
+      <div class="card">
+        <p class="text-2xl font-semibold mb-4">Chunking = Breaking large documents into smaller meaningful pieces.</p>
+      </div>
+
+      <p>Instead of sending entire documents, Rahul learned to send only relevant sections.</p>
+
+      <div class="card">
+        <p><strong>Bad:</strong> Analyze this entire report.</p>
+        <br>
+        <p><strong>Better:</strong> Analyze Chapter 3 and summarize physician insights.</p>
+      </div>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Chunking improves both efficiency and quality because the AI can focus deeply instead of spreading attention everywhere.</p>
+    </div>
+  <a href="#chapter9" class="next-chapter" onclick="showChapter(event, 'chapter9')">
+      Enter the World of RAG <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 9 -->
+  <section id="chapter9" class="chapter hidden">
+    <div class="chapter-sub">Chapter 9</div>
+    <h2 class="chapter-title">Rahul Discovers RAG</h2>
+
+    <div class="content">
+      <p>Contexto introduced Rahul to Retrieval-Augmented Generation.</p>
+
+      <div class="card text-center text-2xl font-bold text-sky-300">
+        RAG = Retrieval Augmented Generation
+      </div>
+
+      <p>Instead of sending entire databases to AI, systems retrieve only relevant information before generating responses.</p>
+
+      <div class="card">
+        <p class="text-xl leading-9">
+          Doctor asks: “What are asthma treatment guidelines?”
+          <br><br>
+          AI retrieves only asthma-related content — not all medical documents.
+        </p>
+      </div>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Modern enterprise AI systems are powerful not because they store everything in memory, but because they retrieve the right information at the right time.</p>
+    </div>
+  <a href="#chapter10" class="next-chapter" onclick="showChapter(event, 'chapter10')">
+      Fight Repetition <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 10 -->
+  <section id="chapter10" class="chapter hidden">
+    <div class="chapter-sub">Chapter 10</div>
+    <h2 class="chapter-title">The Enemy Called Repetition</h2>
+
+    <div class="content">
+      <p>Rahul repeated the same instructions again and again across prompts.</p>
+
+      <div class="card">
+        <p>• Use storytelling</p>
+        <p>• Make it engaging</p>
+        <p>• Target pharma managers</p>
+        <p>• Include examples</p>
+      </div>
+
+      <p>Repeated 15 times.</p>
+
+      <p>Contexto explained that repetition wastes tokens and dilutes important information.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>One clean system instruction is often better than repeating the same context in every single message.</p>
+    </div>
+  <a href="#chapter11" class="next-chapter" onclick="showChapter(event, 'chapter11')">
+      Discover Summarization <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 11 -->
+  <section id="chapter11" class="chapter hidden">
+    <div class="chapter-sub">Chapter 11</div>
+    <h2 class="chapter-title">Summarization — The Secret Weapon</h2>
+
+    <div class="content">
+      <p>Contexto compressed 50 chat messages into 5 bullets.</p>
+
+      <div class="card">
+        <p class="text-xl leading-9">
+          “User is building AI-enabled pharma learning workshops using storytelling and practical learning.”
+        </p>
+      </div>
+
+      <p>Summaries preserve meaning while dramatically reducing token usage.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Summarization is one of the most powerful techniques in long AI conversations and enterprise AI architecture.</p>
+    </div>
+  <a href="#chapter12" class="next-chapter" onclick="showChapter(event, 'chapter12')">
+      Learn About Formatting Costs <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 12 -->
+  <section id="chapter12" class="chapter hidden">
+    <div class="chapter-sub">Chapter 12</div>
+    <h2 class="chapter-title">The Cost of Fancy Formatting</h2>
+
+    <div class="content">
+      <p>Rahul loved large JSON prompts, heavy markdown, and giant tables.</p>
+
+      <table>
+        <tr>
+          <th>Format</th>
+          <th>Token Usage</th>
+        </tr>
+        <tr>
+          <td>Plain Text</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Tables</td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Code & JSON</td>
+          <td>Very High</td>
+        </tr>
+      </table>
+
+      <p>Formatting improves readability but also increases token consumption.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection Note</h4>
+      <p>Use formatting intentionally. Structure should help understanding — not overload the context window.</p>
+    </div>
+  <a href="#chapter13" class="next-chapter" onclick="showChapter(event, 'chapter13')">
+      Reach the Golden Rule <span>→</span>
+    </a>
+  </section>
+
+  <!-- CHAPTER 13 -->
+  <section id="chapter13" class="chapter hidden">
+    <div class="chapter-sub">Final Chapter</div>
+    <h2 class="chapter-title">The Golden Rule</h2>
+
+    <div class="content">
+      <div class="quote">
+        “The smartest AI users are not the ones who send the MOST information… but the MOST RELEVANT information.”
+      </div>
+
+      <p>Rahul redesigned his AI workflow:</p>
+
+      <div class="card">
+        <ul class="space-y-4 text-xl">
+          <li>✅ Chunked documents</li>
+          <li>✅ Summarized history</li>
+          <li>✅ Reduced prompt size</li>
+          <li>✅ Used retrieval systems</li>
+          <li>✅ Removed repetition</li>
+        </ul>
+      </div>
+
+      <p>The AI became faster, cheaper, and smarter.</p>
+    </div>
+
+    <div class="reflection">
+      <h4>Final Reflection</h4>
+      <p>AI effectiveness is not just about model intelligence. It is about how intelligently humans manage context, memory, retrieval, and communication.</p>
+    </div>
+  </section>
+
+<script>
+function showChapter(event, chapterId) {
+  event.preventDefault();
+  const chapter = document.getElementById(chapterId);
+  chapter.classList.remove('hidden');
+  setTimeout(() => {
+    chapter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+</script>
+</body>
+</html>
