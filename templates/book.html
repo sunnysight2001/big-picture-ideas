@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7FQHL0SFD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G7FQHL0SFD');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STOP. It Only Looks Right. | Rahul Molasi</title>
+  <meta name="description" content="A practical guide to directing AI with purpose using the CLIP-A Framework. By Rahul Molasi. Now available on Amazon.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #2d3436;
+      --muted: #636e72;
+      --accent: #0984e3;
+      --accent-hover: #0770c4;
+      --gold: #f9c22e;
+      --dark: #0d1117;
+      --radius: 14px;
+      --radius-lg: 20px;
+      --shadow: 0 6px 20px rgba(0,0,0,0.07);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      padding: 20px 24px;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 16px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+    nav a strong { color: var(--accent); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse at 20% 50%, rgba(9,132,227,0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(249,194,46,0.08) 0%, transparent 50%);
+      padding: 80px 24px 100px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .hero-book-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-book-wrap img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 8px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(249,194,46,0.15);
+      animation: floatBook 4s ease-in-out infinite;
+    }
+
+    @keyframes floatBook {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249,194,46,0.15);
+      color: var(--gold);
+      border: 1px solid rgba(249,194,46,0.3);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: white;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #b2bec3;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      font-style: italic;
+      margin-bottom: 32px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(249,194,46,0.05);
+      border-radius: 0 8px 8px 0;
+      line-height: 1.6;
+    }
+
+    .hero-author {
+      font-size: 0.95rem;
+      color: #b2bec3;
+      margin-bottom: 36px;
+    }
+
+    .hero-author strong {
+      color: white;
+    }
+
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: var(--gold);
+      color: #0d1117;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(249,194,46,0.4);
+    }
+
+    .btn-amazon:hover {
+      background: #ffd55a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(249,194,46,0.5);
+    }
+
+    .btn-amazon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      max-width: 720px;
+    }
+
+    /* ===== WHAT YOU'LL LEARN ===== */
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .learn-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid #f0f0f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .learn-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+
+    .learn-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .learn-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .learn-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ===== CLIP-A FRAMEWORK ===== */
+    .framework-section {
+      background: var(--dark);
+      padding: 80px 24px;
+    }
+
+    .framework-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .framework-inner .section-label {
+      color: var(--gold);
+    }
+
+    .framework-inner h2 {
+      color: white;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .framework-inner > p {
+      color: #b2bec3;
+      font-size: 1rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .clip-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .clip-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .clip-card:hover {
+      background: rgba(249,194,46,0.08);
+      border-color: rgba(249,194,46,0.2);
+    }
+
+    .clip-letter {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .clip-word {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .clip-desc {
+      font-size: 0.78rem;
+      color: #b2bec3;
+      line-height: 1.5;
+    }
+
+    /* ===== CTA BOTTOM ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #0d1117 0%, #1a2332 100%);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-section p {
+      font-size: 1.05rem;
+      color: #b2bec3;
+      margin-bottom: 36px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      background: white;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .hero-book-wrap img {
+        max-width: 260px;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-tagline {
+        text-align: left;
+      }
+
+      .clip-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .learn-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .clip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+  <a href="/all_ideas">Idea</a>
+  <a href="/learn_ai">Learn AI</a>
+  <a href="/resources">Free Resources</a>
+  <a href="/book"><strong>The Book</strong></a>
+  <a href="/contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- Book Cover -->
+    <div class="hero-book-wrap">
+      <img
+        src="{{ url_for('static', filename='images/book_cover.png') }}"
+        alt="STOP. It Only Looks Right. Book Cover"
+      >
+    </div>
+
+    <!-- Hero Text -->
+    <div>
+      <span class="hero-badge">📖 New Release</span>
+      <h1 class="hero-title">
+        <span>STOP.</span><br>
+        It Only Looks Right.
+      </h1>
+      <p class="hero-subtitle">How to Direct AI Instead of Being Fooled by It</p>
+
+      <p class="hero-tagline">
+        "Because in the age of AI, the biggest risk isn't that AI is wrong —
+        it's believing it's right."
+      </p>
+
+      <p class="hero-author">By <strong>Rahul Molasi</strong> · Creator of the CLIP-A Framework</p>
+
+      <a
+        href="https://www.amazon.in/Stop-Only-Looks-Right-Instead/dp/B0H7SNNDH9/"
+        target="_blank"
+        rel="noopener"
+        class="btn-amazon"
+        onclick="gtag('event', 'book_click', {'source': 'hero'});"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.493.124.108.176.08.336-.078.477-.428.39-1.18.84-2.254 1.35-2.1 1.02-4.405 1.53-6.92 1.53-3.233 0-6.17-.726-8.808-2.18-.39-.22-.565-.417-.706-.58zm8.033-5.184c0-.972.25-1.75.745-2.337.496-.584 1.158-.875 1.99-.875.832 0 1.496.29 1.99.875.496.586.744 1.365.744 2.337v.17c0 .948-.248 1.717-.744 2.31-.494.59-1.158.884-1.99.884-.832 0-1.496-.294-1.99-.884-.494-.593-.744-1.362-.744-2.31v-.17zm8.473-6.87l-7.57 8.826-.106.1c-.188.15-.4.224-.626.224-.24 0-.44-.072-.6-.22L4.22 10.59c-.32-.354-.32-.93 0-1.285.322-.356.85-.356 1.17 0l3.25 3.578 6.976-8.136c.322-.375.848-.375 1.17 0 .322.374.322.98 0 1.355l-.235.274z"/></svg>
+        Buy on Amazon
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT THE BOOK -->
+<section class="section">
+  <p class="section-label">About the Book</p>
+  <h2>AI gives you answers. Only you can decide if they're right.</h2>
+  <p>
+    Artificial Intelligence is transforming the way we work — but polished output doesn't always mean accurate output.
+    <strong>STOP. It Only Looks Right.</strong> equips you with the mindset and the CLIP-A Framework to guide AI with purpose.
+  </p>
+  <p>
+    Packed with practical examples, documented case studies, and ready-to-use techniques, this book empowers professionals
+    to make better decisions, reduce AI errors, and unlock the true potential of Generative AI.
+  </p>
+
+  <div class="learn-grid">
+    <div class="learn-card">
+      <div class="learn-icon">🎯</div>
+      <h3>Direct AI with Purpose</h3>
+      <p>Stop accepting AI output at face value. Learn to guide, question, and validate what AI gives you.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon">🧠</div>
+      <h3>Build Critical AI Mindset</h3>
+      <p>Develop the thinking habits that separate professionals who use AI well from those who get misled by it.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon">📋</div>
+      <h3>Real Case Studies</h3>
+      <p>Documented examples of AI errors and how to catch them before they cost you time, trust, or credibility.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon">⚡</div>
+      <h3>Ready-to-Use Techniques</h3>
+      <p>Practical frameworks and prompting strategies you can apply from Day 1 across any AI tool.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLIP-A FRAMEWORK -->
+<section class="framework-section">
+  <div class="framework-inner">
+    <p class="section-label">The CLIP-A Framework</p>
+    <h2>A System to Direct AI, Not Just Use It</h2>
+    <p>The CLIP-A Framework is the core methodology of this book — a 5-step mental model to get accurate, reliable, and purposeful output from any AI tool.</p>
+
+    <div class="clip-grid">
+      <div class="clip-card">
+        <div class="clip-letter">C</div>
+        <div class="clip-word">Context</div>
+        <div class="clip-desc">Set the right background, define role before you prompt</div>
+      </div>
+      <div class="clip-card">
+        <div class="clip-letter">L</div>
+        <div class="clip-word">Lens</div>
+        <div class="clip-desc">Define the perspective AI should take, like create, summarize etc</div>
+      </div>
+      <div class="clip-card">
+        <div class="clip-letter">I</div>
+        <div class="clip-word">Instruction</div>
+        <div class="clip-desc">Give Instructions, Set boundaries and constraints for output</div>
+      </div>
+      <div class="clip-card">
+        <div class="clip-letter">P</div>
+        <div class="clip-word">Presentation</div>
+        <div class="clip-desc">Define how you want the output to be structured and formatted</div>
+      </div>
+      <div class="clip-card">
+        <div class="clip-letter">A</div>
+        <div class="clip-word">Addon</div>
+        <div class="clip-desc">Add tone, examples, and additional context which will make the output more accurate and useful</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <h2>Ready to Stop Being Fooled?</h2>
+  <p>Join professionals who are learning to direct AI with clarity, confidence, and control.</p>
+  <a
+    href="https://www.amazon.in/Stop-Only-Looks-Right-Instead/dp/B0H7SNNDH9/"
+    target="_blank"
+    rel="noopener"
+    class="btn-amazon"
+    onclick="gtag('event', 'book_click', {'source': 'bottom_cta'});"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.493.124.108.176.08.336-.078.477-.428.39-1.18.84-2.254 1.35-2.1 1.02-4.405 1.53-6.92 1.53-3.233 0-6.17-.726-8.808-2.18-.39-.22-.565-.417-.706-.58zm8.033-5.184c0-.972.25-1.75.745-2.337.496-.584 1.158-.875 1.99-.875.832 0 1.496.29 1.99.875.496.586.744 1.365.744 2.337v.17c0 .948-.248 1.717-.744 2.31-.494.59-1.158.884-1.99.884-.832 0-1.496-.294-1.99-.884-.494-.593-.744-1.362-.744-2.31v-.17zm8.473-6.87l-7.57 8.826-.106.1c-.188.15-.4.224-.626.224-.24 0-.44-.072-.6-.22L4.22 10.59c-.32-.354-.32-.93 0-1.285.322-.356.85-.356 1.17 0l3.25 3.578 6.976-8.136c.322-.375.848-.375 1.17 0 .322.374.322.98 0 1.355l-.235.274z"/></svg>
+    Get the Book on Amazon
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Big Picture Ideas · <a href="/privacy" style="color:#636e72;">Privacy Policy</a>
+</footer>
+
+</body>
+</html>

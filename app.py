@@ -140,6 +140,9 @@ def learn_ai_detail(slug):
         hack=hack,
         next_hack=next_hack
     )
+@app.route('/book')
+def book():
+    return render_template('book.html')
 
 @app.route('/')
 def index():
