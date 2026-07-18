@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STOP. It Only Looks Right. | Rahul Molasi</title>
-  <meta name="description" content="A practical guide to directing AI with purpose using the CLIP-A Framework. By Rahul Molasi. Now available on Amazon.">
+  <meta name="description" content="A practical guide to directing AI with purpose using the CLIP-A Framework. By Rahul Molasi. Now available on Amazon, Flipkart and Notion Press.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,7 +71,6 @@
       background-image: radial-gradient(ellipse at 20% 50%, rgba(9,132,227,0.15) 0%, transparent 60%),
                         radial-gradient(ellipse at 80% 20%, rgba(249,194,46,0.08) 0%, transparent 50%);
       padding: 80px 24px 100px;
-      text-align: center;
     }
 
     .hero-inner {
@@ -81,11 +80,9 @@
       grid-template-columns: 1fr 1.2fr;
       gap: 64px;
       align-items: center;
-      text-align: left;
     }
 
     .hero-book-wrap {
-      position: relative;
       display: flex;
       justify-content: center;
     }
@@ -126,9 +123,7 @@
       margin-bottom: 8px;
     }
 
-    .hero-title span {
-      color: var(--gold);
-    }
+    .hero-title span { color: var(--gold); }
 
     .hero-subtitle {
       font-size: 1.1rem;
@@ -155,20 +150,25 @@
       margin-bottom: 36px;
     }
 
-    .hero-author strong {
-      color: white;
+    .hero-author strong { color: white; }
+
+    /* ===== BUY BUTTONS ===== */
+    .buy-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .btn-amazon {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
+      gap: 8px;
+      padding: 14px 24px;
       background: var(--gold);
       color: #0d1117;
       border-radius: 10px;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 800;
       transition: all 0.2s ease;
       box-shadow: 0 4px 20px rgba(249,194,46,0.4);
@@ -180,9 +180,46 @@
       box-shadow: 0 8px 30px rgba(249,194,46,0.5);
     }
 
-    .btn-amazon svg {
-      width: 20px;
-      height: 20px;
+    .btn-flipkart {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: #2874f0;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(40,116,240,0.35);
+    }
+
+    .btn-flipkart:hover {
+      background: #1a5dc8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(40,116,240,0.45);
+    }
+
+    .btn-notion {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: white;
+      color: #0d1117;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-notion:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
     }
 
     /* ===== ABOUT SECTION ===== */
@@ -269,9 +306,7 @@
       margin: 0 auto;
     }
 
-    .framework-inner .section-label {
-      color: var(--gold);
-    }
+    .framework-inner .section-label { color: var(--gold); }
 
     .framework-inner h2 {
       color: white;
@@ -352,6 +387,13 @@
       margin-right: auto;
     }
 
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
     /* ===== FOOTER ===== */
     footer {
       text-align: center;
@@ -370,26 +412,20 @@
         text-align: center;
       }
 
-      .hero-book-wrap img {
-        max-width: 260px;
-      }
+      .hero-book-wrap img { max-width: 260px; }
 
-      .hero-title {
-        font-size: 2.2rem;
-      }
+      .hero-title { font-size: 2.2rem; }
 
-      .hero-tagline {
-        text-align: left;
-      }
+      .hero-tagline { text-align: left; }
+
+      .buy-buttons { justify-content: center; }
 
       .clip-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
       }
 
-      .learn-grid {
-        grid-template-columns: 1fr;
-      }
+      .learn-grid { grid-template-columns: 1fr; }
 
       nav a {
         margin: 0 8px;
@@ -398,13 +434,10 @@
     }
 
     @media (max-width: 480px) {
-      .clip-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-title {
-        font-size: 1.9rem;
-      }
+      .clip-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-title { font-size: 1.9rem; }
+      .buy-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -449,16 +482,26 @@
 
       <p class="hero-author">By <strong>Rahul Molasi</strong> · Creator of the CLIP-A Framework</p>
 
-      <a
-        href="https://www.amazon.in/Stop-Only-Looks-Right-Instead/dp/B0H7SNNDH9/"
-        target="_blank"
-        rel="noopener"
-        class="btn-amazon"
-        onclick="gtag('event', 'book_click', {'source': 'hero'});"
-      >
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.493.124.108.176.08.336-.078.477-.428.39-1.18.84-2.254 1.35-2.1 1.02-4.405 1.53-6.92 1.53-3.233 0-6.17-.726-8.808-2.18-.39-.22-.565-.417-.706-.58zm8.033-5.184c0-.972.25-1.75.745-2.337.496-.584 1.158-.875 1.99-.875.832 0 1.496.29 1.99.875.496.586.744 1.365.744 2.337v.17c0 .948-.248 1.717-.744 2.31-.494.59-1.158.884-1.99.884-.832 0-1.496-.294-1.99-.884-.494-.593-.744-1.362-.744-2.31v-.17zm8.473-6.87l-7.57 8.826-.106.1c-.188.15-.4.224-.626.224-.24 0-.44-.072-.6-.22L4.22 10.59c-.32-.354-.32-.93 0-1.285.322-.356.85-.356 1.17 0l3.25 3.578 6.976-8.136c.322-.375.848-.375 1.17 0 .322.374.322.98 0 1.355l-.235.274z"/></svg>
-        Buy on Amazon
-      </a>
+      <div class="buy-buttons">
+        <a href="https://www.amazon.in/Stop-Only-Looks-Right-Instead/dp/B0H7SNNDH9/"
+           target="_blank" rel="noopener"
+           class="btn-amazon"
+           onclick="gtag('event', 'book_click', {'source': 'hero_amazon'});">
+          🛍️ Amazon
+        </a>
+        <a href="https://www.flipkart.com/books/pr?sid=bks&q=Stop.+It+only+looks+Right&otracker=categorytree"
+           target="_blank" rel="noopener"
+           class="btn-flipkart"
+           onclick="gtag('event', 'book_click', {'source': 'hero_flipkart'});">
+          🛒 Flipkart
+        </a>
+        <a href="https://notionpress.com/in/read/stop-it-only-looks-right"
+           target="_blank" rel="noopener"
+           class="btn-notion"
+           onclick="gtag('event', 'book_click', {'source': 'hero_notion'});">
+          📖 Notion Press
+        </a>
+      </div>
     </div>
 
   </div>
@@ -522,7 +565,7 @@
       <div class="clip-card">
         <div class="clip-letter">I</div>
         <div class="clip-word">Instruction</div>
-        <div class="clip-desc">Give Instructions, Set boundaries and constraints for output</div>
+        <div class="clip-desc">Give instructions, set boundaries and constraints for output</div>
       </div>
       <div class="clip-card">
         <div class="clip-letter">P</div>
@@ -532,7 +575,7 @@
       <div class="clip-card">
         <div class="clip-letter">A</div>
         <div class="clip-word">Addon</div>
-        <div class="clip-desc">Add tone, examples, and additional context which will make the output more accurate and useful</div>
+        <div class="clip-desc">Add tone, examples, and additional context to make output more accurate</div>
       </div>
     </div>
   </div>
@@ -542,16 +585,26 @@
 <section class="cta-section">
   <h2>Ready to Stop Being Fooled?</h2>
   <p>Join professionals who are learning to direct AI with clarity, confidence, and control.</p>
-  <a
-    href="https://www.amazon.in/Stop-Only-Looks-Right-Instead/dp/B0H7SNNDH9/"
-    target="_blank"
-    rel="noopener"
-    class="btn-amazon"
-    onclick="gtag('event', 'book_click', {'source': 'bottom_cta'});"
-  >
-    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.493.124.108.176.08.336-.078.477-.428.39-1.18.84-2.254 1.35-2.1 1.02-4.405 1.53-6.92 1.53-3.233 0-6.17-.726-8.808-2.18-.39-.22-.565-.417-.706-.58zm8.033-5.184c0-.972.25-1.75.745-2.337.496-.584 1.158-.875 1.99-.875.832 0 1.496.29 1.99.875.496.586.744 1.365.744 2.337v.17c0 .948-.248 1.717-.744 2.31-.494.59-1.158.884-1.99.884-.832 0-1.496-.294-1.99-.884-.494-.593-.744-1.362-.744-2.31v-.17zm8.473-6.87l-7.57 8.826-.106.1c-.188.15-.4.224-.626.224-.24 0-.44-.072-.6-.22L4.22 10.59c-.32-.354-.32-.93 0-1.285.322-.356.85-.356 1.17 0l3.25 3.578 6.976-8.136c.322-.375.848-.375 1.17 0 .322.374.322.98 0 1.355l-.235.274z"/></svg>
-    Get the Book on Amazon
-  </a>
+  <div class="cta-buttons">
+    <a href="https://www.amazon.in/Stop-Only-Looks-Right-Instead/dp/B0H7SNNDH9/"
+       target="_blank" rel="noopener"
+       class="btn-amazon"
+       onclick="gtag('event', 'book_click', {'source': 'cta_amazon'});">
+      🛍️ Buy on Amazon
+    </a>
+    <a href="https://www.flipkart.com/books/pr?sid=bks&q=Stop.+It+only+looks+Right&otracker=categorytree"
+       target="_blank" rel="noopener"
+       class="btn-flipkart"
+       onclick="gtag('event', 'book_click', {'source': 'cta_flipkart'});">
+      🛒 Buy on Flipkart
+    </a>
+    <a href="https://notionpress.com/in/read/stop-it-only-looks-right"
+       target="_blank" rel="noopener"
+       class="btn-notion"
+       onclick="gtag('event', 'book_click', {'source': 'cta_notion'});">
+      📖 Notion Press
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->
